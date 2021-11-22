@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+   height: 12%;
+}
+
+.logo {
+  margin-left: 2%;
+}
+
+.site_links {
+margin-right: 2%;
+}
+
+.fa-egg {
+    margin-right: 10px;
+}
+
+.pet_overview_section {
+    margin-top:5%;
+    display: inline-flex;
+}

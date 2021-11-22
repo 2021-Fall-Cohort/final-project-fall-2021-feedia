@@ -16,16 +16,16 @@ public class Schedule {
     @Lob
     private String description;
 
-    private int interval;
+    private int intervals;
 
     @ManyToOne
     @JsonIgnore
     private Reptile reptile;
 
-    public Schedule(String name, String description, int interval, Reptile reptile) {
+    public Schedule(String name, String description, int intervals, Reptile reptile) {
         this.name = name;
         this.description = description;
-        this.interval = interval;
+        this.intervals = intervals;
         this.reptile = reptile;
     }
 
@@ -45,7 +45,7 @@ public class Schedule {
     }
 
     public int getInterval() {
-        return interval;
+        return intervals;
     }
 
     public Reptile getReptile() {

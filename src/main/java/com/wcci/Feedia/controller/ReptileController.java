@@ -50,10 +50,10 @@ public class ReptileController {
         return reptileRepo.findAll();
     }
 
-    @PostMapping("/{id}/update")
-    public Reptile retrieveReptileUpdate(@PathVariable Long id, float temp){
+    @PatchMapping("/{id}/update")
+    public Reptile retrieveReptileUpdate(@PathVariable Long id, @RequestBody float newTemp){
         Reptile reptileToUpdate = reptileRepo.findById(id).get();
-        reptileToUpdate.setTemp(temp);
+        reptileToUpdate.setTemp(newTemp);
         reptileRepo.save(reptileToUpdate);
         return reptileRepo.findById(id).get();
     }

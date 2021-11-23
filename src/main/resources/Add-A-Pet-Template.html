@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/layout.css">
 </head>
 
@@ -22,7 +22,20 @@
                     </div>
                 </header>
             </section>
-
+            <div class="Add_Pet_Form">
+                <a>Add Pet</a>
+                <p>Import Pet:</p> <input type="text" name="import_pet">
+                <hr>
+                <p>Name:</p> <input type="text" name="name">
+                <p>Age:</p>  <input type="text" name="age">
+                <p>Sex:</p>  <input type="text" name="sex">
+                <p>Pet Image:</p> <input type="text" name="pet_image">
+                <p>Species:</p>  <input type="text" name="species">
+                <p>Description:</p><textarea name="Description:" rows="5" cols="40">
+                    </textarea>
+                    
+                <button type="add_pet" onclick="add pet">Add Pet</button>
+            </div>
             <section>
                 <footer>
                     <div class="footer_text">

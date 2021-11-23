@@ -28,6 +28,17 @@ header {
 }
 
 
+.Add_Pet_Form {
+    color: #1A8D26 ;
+}
+
+.add_pet {
+    color: #1A8D26;
+}
+
+.gen_care_container_spv {
+    border: soild .5px black;
+}
 
 footer {
   background-color: #1A8D26;

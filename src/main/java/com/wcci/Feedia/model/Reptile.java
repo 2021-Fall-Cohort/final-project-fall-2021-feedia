@@ -15,6 +15,7 @@ public class Reptile {
     private int age;
     private String gender;
     private String image;
+    private String temp;
 
     @OneToMany(mappedBy = "reptile", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Need> needs;
@@ -31,6 +32,7 @@ public class Reptile {
         this.age = age;
         this.gender = gender;
         this.image = image;
+        this.temp = "0";
     }
 
     public Reptile(){
@@ -67,5 +69,17 @@ public class Reptile {
 
     public Collection<Note> getNotes() {
         return notes;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public String getTemp() {
+        return temp;
+    }
+
+    public void setTemp(String temp){
+        this.temp = temp;
     }
 }

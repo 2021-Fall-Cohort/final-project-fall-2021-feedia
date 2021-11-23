@@ -49,4 +49,11 @@ public class ReptileController {
         }
         return reptileRepo.findAll();
     }
+
+    @GetMapping("/{id}/update")
+    public Reptile retrieveReptileUpdate(@PathVariable Long id, String temp){
+        Reptile reptileToUpdate = reptileRepo.findById(id).get();
+        reptileToUpdate.setTemp(temp);
+        return reptileRepo.findById(id).get();
+    }
 }

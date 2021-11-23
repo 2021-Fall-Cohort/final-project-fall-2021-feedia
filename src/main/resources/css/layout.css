@@ -6,7 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-   height: 12%;
+  height: 12%;
 }
 
 .logo {
@@ -53,14 +53,15 @@ margin-right: 2%;
   margin-bottom: 5%;
 }
 
-.Single_Pet_Page {
+/* .single_pet_page {
   margin-top: 5%;
   margin-bottom: 2%;
   display: flexbox;
   justify-content: flex-start;
+} */
+
+.pet_portrait {
+  margin: 5%;
 }
 
-.input {
-  
-  
-}
+

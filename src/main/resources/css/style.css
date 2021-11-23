@@ -27,6 +27,10 @@ header {
     border: solid .5px black;
 }
 
+.gen_care_container_spv {
+    border: soild .5px black;
+}
+
 footer {
   background-color: #1A8D26;
   color: azure;

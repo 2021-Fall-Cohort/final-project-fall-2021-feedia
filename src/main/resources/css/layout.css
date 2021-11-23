@@ -52,3 +52,15 @@ margin-right: 2%;
 .pet_overview_section {
   margin-bottom: 5%;
 }
+
+.Single_Pet_Page {
+  margin-top: 5%;
+  margin-bottom: 2%;
+  display: flexbox;
+  justify-content: flex-start;
+}
+
+.input {
+  
+  
+}

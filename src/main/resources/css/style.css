@@ -14,5 +14,24 @@ header {
 
 .pet_links a{
    font-size: 1.5em;
-    text-decoration: none;
+   color:#ffffff;
+   text-decoration: none;
+    
+}
+
+.pet_links {
+    background-color: #1A8D26;
+}
+
+.pet_section {
+    border: solid .5px black;
+}
+
+footer {
+  background-color: #1A8D26;
+  color: azure;
+  clear: both;
+  position: relative;
+  height: 50px;
+  text-align: center;
 }

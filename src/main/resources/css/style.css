@@ -27,6 +27,14 @@ header {
     border: solid .5px black;
 }
 
+.Add_Pet_Form {
+    color: #1A8D26 ;
+}
+
+.add_pet {
+    color: #1A8D26;
+}
+
 footer {
   background-color: #1A8D26;
   color: azure;

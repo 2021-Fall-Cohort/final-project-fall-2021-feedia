@@ -54,6 +54,7 @@ public class ReptileController {
     public Reptile retrieveReptileUpdate(@PathVariable Long id, String temp){
         Reptile reptileToUpdate = reptileRepo.findById(id).get();
         reptileToUpdate.setTemp(temp);
+        reptileRepo.save(reptileToUpdate);
         return reptileRepo.findById(id).get();
     }
 }

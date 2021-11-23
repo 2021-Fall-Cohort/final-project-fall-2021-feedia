@@ -32,7 +32,6 @@ public class Reptile {
         this.age = age;
         this.gender = gender;
         this.image = image;
-        this.temp = "0";
     }
 
     public Reptile(){

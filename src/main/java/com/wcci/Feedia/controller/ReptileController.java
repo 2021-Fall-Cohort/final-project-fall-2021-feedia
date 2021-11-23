@@ -50,7 +50,7 @@ public class ReptileController {
         return reptileRepo.findAll();
     }
 
-    @GetMapping("/{id}/update")
+    @PostMapping("/{id}/update")
     public Reptile retrieveReptileUpdate(@PathVariable Long id, String temp){
         Reptile reptileToUpdate = reptileRepo.findById(id).get();
         reptileToUpdate.setTemp(temp);

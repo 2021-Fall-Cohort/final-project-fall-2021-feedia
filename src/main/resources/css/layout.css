@@ -60,7 +60,10 @@ margin-right: 2%;
   justify-content: flex-start;
 } */
 
-.pet_portrait {
+
+.pet_info {
+  display: inline-flex;
+  justify-content: space-between;
   margin: 5%;
 }
 

@@ -13,4 +13,4 @@ function displayPetView(containerEl, pet, pets) {
     const petInfoEl = document.createElement("div");
     petInfoEl.classList("pet_info");
 
-}
+} export {displayPetView}

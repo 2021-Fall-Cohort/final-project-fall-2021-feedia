@@ -16,7 +16,6 @@ function buildHeader() {
     const sectionEl = document.createElement("section");
     const divEl = document.createElement("div");
     divEl.classList.add("site_links");
-    const addPetEl = document.createElement("p");
 
     const headerEl = document.createElement("header");
     headerEl.id = "header";
@@ -33,18 +32,21 @@ function buildHeader() {
 } 
 
 function buildmain() {
-    const mainEl = document.createElement("main");
-    mainEl.classList.add("main-content");
-    containerEl.appendChild(mainEl);
-    displayPetView(mainEl, pets);
+    // const mainEl = document.createElement("main");
+    // mainEl.classList.add("main-content");
+    // containerEl.appendChild(mainEl);
+    // displayPetView(mainEl, pets);
 }
 
 function buildFooter() {
     const footerEl = document.createElement("footer");
     const footerDivEl = document.createElement("div");
+
     footerDivEl.classList.add("footer_text");
     const footerTextEl = document.createElement("p");
-    footerTextEl.innerText = "We Can Code IT 2021";
+    footerTextEl.innerHTML = "We Can Code it &copy; 2021";
+    2021
+
     footerDivEl.appendChild(footerTextEl);
     footerEl.appendChild(footerDivEl);
     containerEl.appendChild(footerEl);

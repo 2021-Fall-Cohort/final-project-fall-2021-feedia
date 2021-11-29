@@ -1,6 +1,6 @@
 
 
-function displayPetView(containerEl, pet, pets) {
+function displayPetView(containerEl, reptile, reptiles) {
     
     
     const petEl = document.createElement("section");

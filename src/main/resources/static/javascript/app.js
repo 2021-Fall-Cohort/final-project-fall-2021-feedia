@@ -1,6 +1,6 @@
 import {displayPetView} from "./pet.js";
 
-const conteainerEl = document.querySelector(".container");
+const containerEl = document.querySelector(".container");
 
 buildHeader();
 
@@ -25,8 +25,5 @@ function buildHeader() {
 
     sectionEl.appendChild(headerEl);
     headerEl.appendChild(headerLogoEl);
-    conteainerEl.appendChild(headerEl);
-
-
-
+    containerEl.appendChild(headerEl);
 }

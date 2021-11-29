@@ -49,4 +49,10 @@ public class ReptileController {
         }
         return reptileRepo.findAll();
     }
+
+    @DeleteMapping("/{id}")
+    public Iterable<Reptile> deleteReptile(@PathVariable Long id){
+        reptileRepo.deleteById(id);
+        return reptileRepo.findAll();
+    }
 }

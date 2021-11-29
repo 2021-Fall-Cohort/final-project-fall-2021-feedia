@@ -6,7 +6,7 @@ import {
     clearChildren
 } from "./app.js"
 
-function displayPetsView(containerEl, reptiles){
+function displayPetsView(mainEl, reptiles){
     const petOverviewSectionEl = document.createElement("div");
     petOverviewSectionEl.classList.add("pet_overview_section");
 
@@ -63,8 +63,10 @@ function displayPetsView(containerEl, reptiles){
         singlePetSectionEl.appendChild(petMonthCalendarEl);
         reptileSectionEl.appendChild(singlePetSectionEl);
 
-        containerEl.appendChild(reptileSectionEl);
+        petOverviewSectionEl.appendChild(reptileSectionEl);
     });
+
+    mainEl.appendChild(petOverviewSectionEl);
 
 }
 

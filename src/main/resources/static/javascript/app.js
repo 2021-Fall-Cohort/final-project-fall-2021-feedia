@@ -1,4 +1,5 @@
 import {displayPetView} from "./pet.js";
+import { displayPetsView } from "./pets.js";
 
 const containerEl = document.querySelector(".container");
 
@@ -26,4 +27,11 @@ function buildHeader() {
     sectionEl.appendChild(headerEl);
     headerEl.appendChild(headerLogoEl);
     containerEl.appendChild(headerEl);
+}
+
+function buildMainElement(){
+    const mainEl = document.createElement("main");
+    mainEl.classList.add("main-content");
+    containerEl.appendChild(mainEl);
+    displayPetsView(mainEl, reptiles);
 }

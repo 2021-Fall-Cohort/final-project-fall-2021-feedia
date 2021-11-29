@@ -1,6 +1,8 @@
 
 
 function displayPetView(containerEl, pet, pets) {
+    
+    
     const petEl = document.createElement("section");
     petEl.classList("pet_links");
 

@@ -28,7 +28,7 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Reptile reptile1 = new Reptile("Higgins", "Red-Snouted Snake", 4, "Male","localhost", 0f);
+        Reptile reptile1 = new Reptile("Higgins", "Red-Snouted Snake", 4, "Male","localhost", 0f, 0f);
         reptileRepo.save(reptile1);
 
         Need need1 = new Need("Medicine Twice Daily", reptile1);

@@ -36,8 +36,10 @@ header {
     color: #1A8D26;
 }
 
-.gen_care_container_spv {
-    border: soild .5px black;
+
+
+.schedule_container_spv{
+  border: 1px solid #1A8D26;
 }
 
 footer {

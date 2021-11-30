@@ -1,4 +1,4 @@
-import {displayPetView} from "./pet.js";
+import {displaySinglePetView} from "./pet.js";
 
 const containerEl = document.querySelector(".container");
 
@@ -32,10 +32,7 @@ function buildHeader() {
 } 
 
 function buildmain() {
-    // const mainEl = document.createElement("main");
-    // mainEl.classList.add("main-content");
-    // containerEl.appendChild(mainEl);
-    // displayPetView(mainEl, pets);
+    
 }
 
 function buildFooter() {

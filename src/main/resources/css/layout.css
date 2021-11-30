@@ -58,19 +58,27 @@ margin-right: 2%;
   margin-bottom: 2%;
   display: flexbox;
   justify-content: flex-start;
-} */
+} 
 
+
+.pet_bio {
+  display:flex;
+}
 
 .pet_info {
-  display: inline-flex;
-  justify-content: space-between;
-  margin: 5%;
+  margin-top:12%;
 }
 
-.input {
-  
-  
+.pet_portrait {
+  margin: 10%;
 }
+
+.schedule_container_spv{
+  margin-bottom: 12%;
+  margin-left: 5%;
+  width: 50%;
+}
+
 
 
 .Add_Pet_Form {

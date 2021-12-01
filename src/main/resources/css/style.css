@@ -28,7 +28,18 @@ header {
 }
 
 
-.Add_Pet_Form {
+.add_pet_form_top {
+    color: #1A8D26 ;
+}
+.basic_input {
+    color: #1A8D26 ;
+}
+  
+.input_continued {
+    color: #1A8D26 ;
+}
+  
+.description {
     color: #1A8D26 ;
 }
 
@@ -41,6 +52,8 @@ header {
 .schedule_container_spv{
   border: 1px solid #1A8D26;
 }
+
+
 
 footer {
   background-color: #1A8D26;

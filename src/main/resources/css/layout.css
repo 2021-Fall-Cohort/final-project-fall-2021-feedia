@@ -67,15 +67,34 @@ margin-right: 2%;
   margin: 5%;
 }
 
-.input {
-  
-  
-}
 
-
-.Add_Pet_Form {
-  flex: flex;
-  padding: 4%;
+.Add_Pet_Form_Top{
   margin: 2%;
-
+  margin-left: 2%;
+  justify-content: center;
+  flex-direction: column;
 }
+
+.Import {
+  display: flex;
+  justify-content: right;
+}
+
+.Basic_Input {
+  display: flex;
+  padding: 1%;
+  margin-left: 3%
+  
+}
+
+.Input_Continued {
+  display: flex;
+  padding: 1%;
+  margin-left: 3%;
+}
+
+.Description {
+  justify-content: center;
+  margin-left: 5%;
+}
+

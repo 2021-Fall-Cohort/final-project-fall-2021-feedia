@@ -28,7 +28,18 @@ header {
 }
 
 
-.Add_Pet_Form {
+.Add_Pet_Form_Top {
+    color: #1A8D26 ;
+}
+.Basic_Input {
+    color: #1A8D26 ;
+}
+  
+.Input_Continued {
+    color: #1A8D26 ;
+}
+  
+.Description {
     color: #1A8D26 ;
 }
 
@@ -39,6 +50,8 @@ header {
 .gen_care_container_spv {
     border: soild .5px black;
 }
+
+
 
 footer {
   background-color: #1A8D26;

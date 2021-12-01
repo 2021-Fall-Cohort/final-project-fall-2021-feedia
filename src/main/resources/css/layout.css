@@ -1,6 +1,9 @@
 * {
     margin: 0;
 }
+.container {
+  position:relative;
+}
 
 #header {
   display: flex;
@@ -53,12 +56,12 @@ margin-right: 2%;
   margin-bottom: 5%;
 }
 
-.Single_Pet_Page {
+.single_pet_page {
   margin-top: 5%;
   margin-bottom: 2%;
   display: flexbox;
   justify-content: flex-start;
-} */
+}
 
 
 .pet_info {
@@ -68,33 +71,37 @@ margin-right: 2%;
 }
 
 
-.Add_Pet_Form_Top{
+.add_pet_form_top{
   margin: 2%;
   margin-left: 2%;
   justify-content: center;
   flex-direction: column;
 }
 
-.Import {
+.import {
   display: flex;
   justify-content: right;
 }
 
-.Basic_Input {
+.basic_input {
   display: flex;
   padding: 1%;
   margin-left: 3%
   
 }
 
-.Input_Continued {
+.input_continued {
   display: flex;
   padding: 1%;
   margin-left: 3%;
 }
 
-.Description {
+.description {
   justify-content: center;
   margin-left: 5%;
+}
+
+footer {
+  bottom:0;
 }
 

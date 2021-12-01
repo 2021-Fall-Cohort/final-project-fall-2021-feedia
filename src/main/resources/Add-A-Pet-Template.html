@@ -22,24 +22,29 @@
                     </div>
                 </header>
             </section>
-            <div class="Add_Pet_Form_Top">
+            <div class="add_pet_form_top">
                 <a>Add Pet</a>
-                <div class="Import">
-                    <p>Import Pet:</p> <input type="text" name="import_pet">
+                <div class="import">
+                    <label for="import_pet">Import Pet</label>
+                    <select name="pets" id="pets">
+                        <option value="Cayde">Cayde</option>
+                        <option value ="Kaiju">kaiju</option>
+                    </select>
+
                 </div>
                 <hr>
             </div>
-            <div class="Basic_Input">
+            <div class="basic_input">
                 <p>Name: </p> <input type="text" name="name">
                 <p>Age: </p> <input type="text" name="age">
                 <p>Sex: </p> <input type="text" name="sex">
             </div>
-            <div class="Input_Continued">
+            <div class="input_continued">
                 <p>Pet Image: </p> <input type="text" name="pet_image">
                 <p>Species: </p> <input type="text" name="species">
             </div>
-            <div class="Description">
-                <p>Description: </p><textarea name="Description:" rows="5" cols="40">
+            <div class="description">
+                <p>Description: </p><textarea name="description:" rows="5" cols="40">
                     </textarea>
                 <button type="add_pet" onclick="add_pet">Add Pet</button>
             </div>

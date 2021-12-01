@@ -10,6 +10,9 @@ public class TempHumidity {
         this.humidity = humidity;
     }
 
+    public TempHumidity() {
+    }
+
     public float getTemp() {
         return temp;
     }

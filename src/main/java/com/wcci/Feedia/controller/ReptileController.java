@@ -53,25 +53,24 @@ public class ReptileController {
         return reptileRepo.findAll();
     }
 
-    @PatchMapping("/{id}/updateTemp")
-    public Reptile retrieveReptileTemperature(@PathVariable Long id, @RequestBody float newTemp){
-        Reptile reptileToUpdate = reptileRepo.findById(id).get();
-        reptileToUpdate.setTemp(newTemp);
-        reptileRepo.save(reptileToUpdate);
-        return reptileRepo.findById(id).get();
-    }
-
-    @PatchMapping("/{id}/updateHumidity")
-    public Reptile retrieveReptileHumidity(@PathVariable Long id, @RequestBody float newHumidity){
-        Reptile reptileToUpdate = reptileRepo.findById(id).get();
-        reptileToUpdate.setHumidity(newHumidity);
-        reptileRepo.save(reptileToUpdate);
-        return reptileRepo.findById(id).get();
-    }
+//    @PatchMapping("/{id}/updateTemp")
+//    public Reptile retrieveReptileTemperature(@PathVariable Long id, @RequestBody float newTemp){
+//        Reptile reptileToUpdate = reptileRepo.findById(id).get();
+//        reptileToUpdate.setTemp(newTemp);
+//        reptileRepo.save(reptileToUpdate);
+//        return reptileRepo.findById(id).get();
+//    }
+//
+//    @PatchMapping("/{id}/updateHumidity")
+//    public Reptile retrieveReptileHumidity(@PathVariable Long id, @RequestBody float newHumidity){
+//        Reptile reptileToUpdate = reptileRepo.findById(id).get();
+//        reptileToUpdate.setHumidity(newHumidity);
+//        reptileRepo.save(reptileToUpdate);
+//        return reptileRepo.findById(id).get();
+//    }
 
     @PatchMapping("/{id}/update")
     public Reptile updateReptileData(@PathVariable Long id, @RequestBody TempHumidity newData){
-
         Reptile reptileToUpdate = reptileRepo.findById(id).get();
         reptileToUpdate.setHumidity(newData.getHumidity());
         reptileToUpdate.setTemp(newData.getTemp());

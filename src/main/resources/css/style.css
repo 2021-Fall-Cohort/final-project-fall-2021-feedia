@@ -47,11 +47,30 @@ header {
     color: #1A8D26;
 }
 
-
-
-.schedule_container_spv{
-  border: 1px solid #1A8D26;
+.table_links {
+  background-color: #1A8D26;
+  color:#ffffff;
+  font-size:1.5em;
 }
+
+.table_links a {
+    text-decoration: none;
+    color:#ffffff;
+}
+
+.pet_care_table {
+    width: 90%;
+    border: black, solid, .5px;
+}
+
+.pet_care_table li {
+    list-style: none;
+}
+
+.pet_care_table li:nth-child(2n) {
+  background-color: rgba(26, 141, 38, 0.3)
+}
+
 
 
 

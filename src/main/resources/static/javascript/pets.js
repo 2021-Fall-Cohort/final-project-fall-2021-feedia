@@ -21,8 +21,8 @@ function displayPetsView(mainEl, reptiles){
         const petNameTextEl = document.createElement("p");
         petNameTextEl.innerText = reptile.name;
         petNameTextEl.addEventListener("click", () => {
-            clearChildren(containerEl);
-            displayPetView(containerEl, reptile);
+            clearChildren(mainEl);
+            displayPetView(mainEl, reptile);
         });
 
         // const petArchiveEl = document.createElement("p");
@@ -51,6 +51,10 @@ function displayPetsView(mainEl, reptiles){
         const singlePetImageEl = document.createElement("img");
         singlePetImageEl.src = "../images/kaiju.png";
         singlePetImageEl.alt = "pet portrait";
+        singlePetImageEl.addEventListener("click", () => {
+            clearChildren(mainEl);
+            displayPetView(mainEl, reptile);
+        });
 
         const petAgendaCalendarEl = document.createElement("div");
         //code to show agenda view

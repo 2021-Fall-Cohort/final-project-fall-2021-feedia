@@ -1,5 +1,6 @@
 import {displayPetView} from "./pet.js";
 import { displayPetsView } from "./pets.js";
+import { displayAddAPetView } from "./addAPet.js";
 
 const containerEl = document.querySelector(".container");
 
@@ -25,9 +26,33 @@ function buildHeader() {
     headerLogoEl.src= "images/feedia_logo.png";
     headerLogoEl.alt = "site logo";
     headerLogoEl.classList.add("logo");
+    headerLogoEl.addEventListener("click", () => {
+        window.location = "./static/index.html"; //incorrect for now
+    }) 
 
+    const addPetButtonDivEl = document.createElement("div");
+    addPetButtonDivEl.classList.add("site_links");
+
+    const addPetPTagEl = document.createElement("p");
+    addPetPTagEl.addEventListener("click", () => {
+        clearChildren(mainEl);
+        displayAddAPetView(mainEl);
+    })
+
+    const addPetATagEl = document.createElement("a");
+    addPetATagEl.href = "#";
+    addPetATagEl.innerText = "Add Pet";
+
+    const addPetITagEl = document.createElement("i");
+    addPetITagEl.classList.add("fas fa-egg");
+
+    addPetButtonDivEl.appendChild(addPetPTagEl);
+    addPetPTagEl.appendChild(addPetATagEl);
+    addPetATagEl.appendChild(addPetITagEl);
+    
     sectionEl.appendChild(headerEl);
     headerEl.appendChild(headerLogoEl);
+    headerEl.appendChild(addPetButtonDivEl);
     containerEl.appendChild(headerEl);
 }
 

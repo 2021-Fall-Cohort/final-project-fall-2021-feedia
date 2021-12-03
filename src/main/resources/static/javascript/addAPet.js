@@ -129,6 +129,8 @@ function displayAddAPetView(mainEl, reptile){
             displayPetView(mainEl, reptileJson);
         })
     })
+
+    mainEl.appendChild
 }
 
 export{

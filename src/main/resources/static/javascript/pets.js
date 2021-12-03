@@ -35,8 +35,8 @@ function displayPetsView(mainEl, reptiles){
             })
             .then(res => res.json())
             .then(reptiles => {
-                clearChildren(containerEl);
-                displayPetsView(containerEl, reptiles);
+                clearChildren(mainEl);
+                displayPetsView(mainEl, reptiles);
             })
             .catch(err => console.error(err));
         });
@@ -49,7 +49,7 @@ function displayPetsView(mainEl, reptiles){
         singlePetSectionEl.classList.add("pet_Section");
 
         const singlePetImageEl = document.createElement("img");
-        singlePetImageEl.src = "../images/kaiju.png";
+        singlePetImageEl.src = reptile.image;
         singlePetImageEl.alt = "pet portrait";
         singlePetImageEl.addEventListener("click", () => {
             clearChildren(mainEl);

@@ -6,7 +6,7 @@ import {
     clearChildren
 } from "./app.js"
 
-function displayAddAPetView(mainEl){
+function displayAddAPetView(containerEl){
 
     const petFormTopEl = document.createElement("div");
     petFormTopEl.classList.add("Add_Pet_Form_Top");
@@ -46,7 +46,7 @@ function displayAddAPetView(mainEl){
     basicInputAgeTextEl.innerText = "Age: ";
 
     const basicInputAgeButtonEl = document.createElement("input");
-    basicInputAgeButtonEl.type = "text";
+    basicInputAgeButtonEl.type = "number";
     basicInputAgeButtonEl.name = "age";
 
     const basicInputSexTextEl = document.createElement("p");
@@ -107,30 +107,34 @@ function displayAddAPetView(mainEl){
     addAPetButton.addEventListener("click", () => {
         const newReptileJson = {
             "name": basicInputNameButtonEl.value,
+            "species": speciesButtonEl.value,
             "age": basicInputAgeButtonEl.value,
             "sex": basicInputSexButtonEl.value,
             "image": petImageButtonEl.value,
-            "species": speciesButtonEl.value,
             "description": descriptionTextAreaEl.value,
-            "notes": [],
             "needs": [],
-            "schedules": []
+            "schedules": [],
+            "notes": []
         }
         fetch(`http://localhost:8080/reptiles/`, {
-            method: 'PATCH',
+            method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(newReptileJson)
         })
         .then(res => res.json())
-        .then(reptileJson => {
-            clearChildren(mainEl);
-            displayPetView(mainEl, reptileJson);
+        .then(reptile => {
+            clearChildren(containerEl);
+            displayPetView(containerEl, reptile);
         })
+        .catch(err => {console.error(err)})
     })
 
-    mainEl.appendChild;
+    containerEl.appendChild(petFormTopEl);
+    containerEl.appendChild(basicInputSectionEl);
+    containerEl.appendChild(inputContinuedSectionEl);
+    containerEl.appendChild(descriptionSectionEl);
 }
 
 export{

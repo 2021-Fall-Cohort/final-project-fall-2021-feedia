@@ -1,5 +1,6 @@
 package com.wcci.Feedia.controller;
 
+import com.wcci.Feedia.model.Note;
 import com.wcci.Feedia.model.Reptile;
 import com.wcci.Feedia.model.Schedule;
 import com.wcci.Feedia.repository.NeedRepository;
@@ -37,9 +38,9 @@ public class ReptileController {
     }
 
     @PostMapping("/")
-    public Iterable<Reptile> addReptile(@RequestBody Reptile reptile) {
+    public Reptile addReptile(@RequestBody Reptile reptile) {
         reptileRepo.save(reptile);
-        return reptileRepo.findAll();
+        return reptile;
     }
 
     @PutMapping("/")
@@ -54,5 +55,13 @@ public class ReptileController {
     public Iterable<Reptile> deleteReptile(@PathVariable Long id){
         reptileRepo.deleteById(id);
         return reptileRepo.findAll();
+    }
+
+    @PostMapping("/{id}/addNote")
+    public Reptile addNote(@PathVariable Long id, @RequestBody Note noteToAdd) {
+        Reptile reptileToEdit = reptileRepo.findById(id).get();
+        noteToAdd.setReptile(reptileToEdit);
+        noteRepo.save(noteToAdd);
+        return reptileRepo.findById(id).get();
     }
 }

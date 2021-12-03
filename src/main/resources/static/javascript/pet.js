@@ -62,9 +62,9 @@ function displayPetView(mainEl, reptile, reptiles) {
     const singlePetTableTitleEl = document.createElement("h4");
     singlePetTableTitleEl.innerText = "Schedule";
 
-    const singlePetAddScheduleEl = document.createElement("a");
-    singlePetAddScheduleEl.innerText = "Add Schedule";
-    singlePetAddScheduleEl.href = "#";
+    // const singlePetAddScheduleEl = document.createElement("a");
+    // singlePetAddScheduleEl.innerText = "Add Schedule";
+    // singlePetAddScheduleEl.href = "#";
 
     const singlePetTableItemsDivEl = document.createElement("div");
     singlePetTableItemsDivEl.classList.add("table_items");
@@ -85,7 +85,7 @@ function displayPetView(mainEl, reptile, reptiles) {
     singlePetCareTableEl.appendChild(singlePetTableLinksEl);
     singlePetCareTableEl.appendChild(singlePetTableItemsDivEl);
     singlePetTableLinksEl.appendChild(singlePetTableTitleEl);
-    singlePetTableLinksEl.appendChild(singlePetAddScheduleEl);
+    // singlePetTableLinksEl.appendChild(singlePetAddScheduleEl);
     singlePetTableItemsDivEl.appendChild(singlePetTableItemsListEl);
     singlePetTableItemsListEl.appendChild(singlePetTableItem1El);
     singlePetTableItemsListEl.appendChild(singlePetTableItem2El);
@@ -99,29 +99,54 @@ function displayPetView(mainEl, reptile, reptiles) {
     const singlePetNotesTableLinksEl = document.createElement("div");
     singlePetNotesTableLinksEl.classList.add("table_links");
 
+    const singlePetAddNoteDivEl = document.createElement("div");
+    singlePetAddNoteDivEl.classList.add("add_note_section");
+
     const singlePetTableNotesTitleEl = document.createElement("h4");
     singlePetTableNotesTitleEl.innerText = "Notes";
+
+    const addNoteNameEl = document.createElement("input");
+    addNoteNameEl.type = "text";
+    addNoteNameEl.placeholder = "Note Title: ";
+
+    const addNoteTextAreaEl = document.createElement("textarea");
+    addNoteTextAreaEl.rows = "4";
+    addNoteTextAreaEl.cols = "20";
+    addNoteTextAreaEl.placeholder = "Enter Your Note Here";
 
     const singlePetAddNotesEl = document.createElement("a");
     singlePetAddNotesEl.innerText = "Add Note";
     singlePetAddNotesEl.href = "#";
+    singlePetAddNotesEl.addEventListener("click", () => {
+            // working on this as of Friday
+    })
+
+    singlePetAddNoteDivEl.appendChild(addNoteNameEl);
+    singlePetAddNoteDivEl.appendChild(addNoteTextAreaEl);
+    singlePetAddNoteDivEl.appendChild(singlePetAddNotesEl);
+
+
 
     const singlePetTableNotesDivEl = document.createElement("div");
     singlePetTableNotesDivEl.classList.add("table_items");
 
     const singlePetTableNotesListEl = document.createElement("ul");
 
-    const singlePetTableNotes1El = document.createElement("li");
-    singlePetTableNotes1El.innerText = "Placeholder";
+    reptile.notes.forEach(note => {
+        const singlePetTableNoteEl = document.createElement("li");
+        singlePetTableNoteEl.innerText = note;
 
-    const singlePetTableNotes2El = document.createElement("li");
-    singlePetTableNotes2El.innerText = "Placeholder";
-
-    const singlePetTableNotes3El = document.createElement("li");
-    singlePetTableNotes3El.innerText = "Placeholder";
+        singlePetTableNotesListEl.appendChild(singlePetTableNoteEl);
+    })
 
     
 
+    // const singlePetTableNotes2El = document.createElement("li");
+    // singlePetTableNotes2El.innerText = "Placeholder";
+
+    // const singlePetTableNotes3El = document.createElement("li");
+    // singlePetTableNotes3El.innerText = "Placeholder";
+    
     const singlePetCareCalendarsTableEl = document.createElement("div");
     singlePetCareCalendarsTableEl.classList.add("pet_care_table");
 
@@ -131,9 +156,9 @@ function displayPetView(mainEl, reptile, reptiles) {
     const singlePetTableCalendarsTitleEl = document.createElement("h4");
     singlePetTableCalendarsTitleEl.innerText = "Calendars";
 
-    const singlePetAddCalendarsEl = document.createElement("a");
-    singlePetAddCalendarsEl.innerText = "Add Calendars";
-    singlePetAddCalendarsEl.href = "#";
+    // const singlePetAddCalendarsEl = document.createElement("a");
+    // singlePetAddCalendarsEl.innerText = "Add Calendars";
+    // singlePetAddCalendarsEl.href = "#";
 
     const singlePetTableCalendarsDivEl = document.createElement("div");
     singlePetTableCalendarsDivEl.classList.add("table_items");
@@ -153,17 +178,17 @@ function displayPetView(mainEl, reptile, reptiles) {
     singlePetCareNotesTableEl.appendChild(singlePetNotesTableLinksEl);
     singlePetCareNotesTableEl.appendChild(singlePetTableNotesDivEl);
     singlePetNotesTableLinksEl.appendChild(singlePetTableNotesTitleEl);
-    singlePetNotesTableLinksEl.appendChild(singlePetAddNotesEl);
+    singlePetNotesTableLinksEl.appendChild(singlePetAddNoteDivEl);
     singlePetTableNotesDivEl.appendChild(singlePetTableNotesListEl);
-    singlePetTableNotesListEl.appendChild(singlePetTableNotes1El);
-    singlePetTableNotesListEl.appendChild(singlePetTableNotes2El);
-    singlePetTableNotesListEl.appendChild(singlePetTableNotes3El);
+    // singlePetTableNotesListEl.appendChild(singlePetTableNotes1El);
+    // singlePetTableNotesListEl.appendChild(singlePetTableNotes2El);
+    // singlePetTableNotesListEl.appendChild(singlePetTableNotes3El);
 
     singlePetTablesSectionEl.appendChild(singlePetCareCalendarsTableEl);
     singlePetCareCalendarsTableEl.appendChild(singlePetCalendarsTableLinksEl);    
     singlePetCareCalendarsTableEl.appendChild(singlePetTableCalendarsDivEl);
     singlePetCalendarsTableLinksEl.appendChild(singlePetTableCalendarsTitleEl);
-    singlePetCalendarsTableLinksEl.appendChild(singlePetAddCalendarsEl);
+    // singlePetCalendarsTableLinksEl.appendChild(singlePetAddCalendarsEl);
     singlePetTableCalendarsDivEl.appendChild(singlePetTableCalendarsListEl);
     singlePetTableCalendarsListEl.appendChild(singlePetTableCalendars1El);
     singlePetTableCalendarsListEl.appendChild(singlePetTableCalendars2El);

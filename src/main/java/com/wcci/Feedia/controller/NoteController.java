@@ -28,7 +28,7 @@ public class NoteController {
         return noteRepo.findAll();
     }
 
-    @PostMapping("/")
+    @PostMapping("/{id}")
     public Iterable<Note> addNote(@RequestBody Note note) {
         noteRepo.save(note);
         return noteRepo.findAll();

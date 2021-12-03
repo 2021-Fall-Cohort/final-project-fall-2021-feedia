@@ -23,11 +23,10 @@ public class Note {
     @JsonIgnore
     private Reptile reptile;
 
-    public Note(String name, String description, boolean isPinned, Reptile reptile) {
+    public Note(String name, String description, boolean isPinned) {
         this.name = name;
         this.description = description;
         this.isPinned = isPinned;
-        this.reptile = reptile;
     }
 
     public Note() {
@@ -51,5 +50,9 @@ public class Note {
 
     public Reptile getReptile() {
         return reptile;
+    }
+
+    public void setReptile(Reptile reptile) {
+        this.reptile = reptile;
     }
 }

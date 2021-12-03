@@ -35,8 +35,9 @@ function buildHeader() {
 
     const addPetPTagEl = document.createElement("p");
     addPetPTagEl.addEventListener("click", () => {
-        clearChildren(containerEl);
-        displayAddAPetView(containerEl);
+        const mainEl = document.querySelector(".main-content");
+        clearChildren(mainEl);
+        displayAddAPetView(mainEl);
     })
 
     const addPetATagEl = document.createElement("a");

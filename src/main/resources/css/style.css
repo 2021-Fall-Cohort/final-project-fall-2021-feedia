@@ -28,7 +28,18 @@ header {
 }
 
 
-.Add_Pet_Form {
+.add_pet_form_top {
+    color: #1A8D26 ;
+}
+.basic_input {
+    color: #1A8D26 ;
+}
+  
+.input_continued {
+    color: #1A8D26 ;
+}
+  
+.description {
     color: #1A8D26 ;
 }
 
@@ -36,9 +47,32 @@ header {
     color: #1A8D26;
 }
 
-.gen_care_container_spv {
-    border: soild .5px black;
+.table_links {
+  background-color: #1A8D26;
+  color:#ffffff;
+  font-size:1.5em;
 }
+
+.table_links a {
+    text-decoration: none;
+    color:#ffffff;
+}
+
+.pet_care_table {
+    width: 90%;
+    border: black, solid, .5px;
+}
+
+.pet_care_table li {
+    list-style: none;
+}
+
+.pet_care_table li:nth-child(2n) {
+  background-color: rgba(26, 141, 38, 0.3)
+}
+
+
+
 
 footer {
   background-color: #1A8D26;

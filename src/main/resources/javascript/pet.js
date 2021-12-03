@@ -1,6 +1,6 @@
 
 
-function displayPetView(containerEl, pet, pets) {
+function displaySinglePetView(containerEl, pet, pets) {
     const petEl = document.createElement("section");
     petEl.classList("pet_links");
 
@@ -13,4 +13,11 @@ function displayPetView(containerEl, pet, pets) {
     const petInfoEl = document.createElement("div");
     petInfoEl.classList("pet_info");
 
-} export {displayPetView}
+    const petPhotoEl = document.createElement("img");
+    petPhotoEl.src = "images/kaiju.png";
+    petPhotoEl.alt ="picture of your pet";
+    petPhotoEl.classList.add("pet_portrait");
+
+
+
+} export {displaySinglePetView}

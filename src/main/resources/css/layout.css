@@ -1,6 +1,9 @@
 * {
     margin: 0;
 }
+.container {
+  position:relative;
+}
 
 #header {
   display: flex;
@@ -53,29 +56,72 @@ margin-right: 2%;
   margin-bottom: 5%;
 }
 
-.Single_Pet_Page {
-  margin-top: 5%;
-  margin-bottom: 2%;
-  display: flexbox;
-  justify-content: flex-start;
+.pet_info {
+  margin: 8%;
+  display: flex;
+  align-items: center;
+  
+}
+
+.table_links {
+  display: flex;
+  justify-content: space-between;
+  padding: 2%;
+}
+
+.pet_demographics {
+  margin-left: 5%;
+}
+
+.pet_care_table {
+  margin: 5%;
+  margin-bottom: 5%; 
+}
+
+.tables_top {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .schedule_container_spv{
+  margin-bottom: 12%;
+  margin-left: 5%;
+  width: 50%;
 } */
 
-
-.pet_info {
-  display: inline-flex;
-  justify-content: space-between;
-  margin: 5%;
-}
-
-.input {
-  
-  
-}
-
-
-.Add_Pet_Form {
-  flex: flex;
-  padding: 4%;
+.add_pet_form_top{
   margin: 2%;
-
+  margin-left: 2%;
+  justify-content: center;
+  flex-direction: column;
 }
+
+.import {
+  display: flex;
+  justify-content: right;
+}
+
+.basic_input {
+  display: flex;
+  padding: 1%;
+  margin-left: 3%
+  
+}
+
+.input_continued {
+  display: flex;
+  padding: 1%;
+  margin-left: 3%;
+}
+
+.description {
+  justify-content: center;
+  margin-left: 5%;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+

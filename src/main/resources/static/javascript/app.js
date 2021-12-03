@@ -17,7 +17,7 @@ function clearChildren(element) {
 function buildHeader() {
     const sectionEl = document.createElement("section");
     const divEl = document.createElement("div");
-    divEl.classList("site_links");
+    divEl.classList.add("site_links");
 
     const headerEl = document.createElement("header");
     headerEl.id = "header";
@@ -27,7 +27,7 @@ function buildHeader() {
     headerLogoEl.alt = "site logo";
     headerLogoEl.classList.add("logo");
     headerLogoEl.addEventListener("click", () => {
-        window.location = "./static/index.html"; //incorrect for now
+        window.location = "./index.html";
     }) 
 
     const addPetButtonDivEl = document.createElement("div");
@@ -35,8 +35,8 @@ function buildHeader() {
 
     const addPetPTagEl = document.createElement("p");
     addPetPTagEl.addEventListener("click", () => {
-        clearChildren(mainEl);
-        displayAddAPetView(mainEl);
+        clearChildren(containerEl);
+        displayAddAPetView(containerEl);
     })
 
     const addPetATagEl = document.createElement("a");
@@ -44,7 +44,8 @@ function buildHeader() {
     addPetATagEl.innerText = "Add Pet";
 
     const addPetITagEl = document.createElement("i");
-    addPetITagEl.classList.add("fas fa-egg");
+    addPetITagEl.classList.add("fa-egg");
+    addPetITagEl.classList.add("fas");
 
     addPetButtonDivEl.appendChild(addPetPTagEl);
     addPetPTagEl.appendChild(addPetATagEl);
@@ -60,7 +61,11 @@ function buildMainElement(){
     const mainEl = document.createElement("main");
     mainEl.classList.add("main-content");
     containerEl.appendChild(mainEl);
-    displayPetsView(mainEl, reptiles);
+    fetch("http://localhost:8080/reptiles/")
+    .then(res => res.json())
+    .then(reptiles => {
+        displayPetsView(mainEl, reptiles);
+    })
 }
 
 function buildFooter() {

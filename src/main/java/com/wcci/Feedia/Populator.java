@@ -28,8 +28,11 @@ public class Populator implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Reptile reptile1 = new Reptile("Higgins", "Red-Snouted Snake", 4, "Male","localhost", "Red nose, brown body, bad temper");
+        Reptile reptile1 = new Reptile("Higgins", "Red-Snouted Snake", 4, "Male","../images/kaiju.png", "Red nose, brown body, bad temper");
         reptileRepo.save(reptile1);
+
+        Reptile reptile2 = new Reptile("Higgins", "Red-Snouted Snake", 4, "Male","../images/kaiju.png", "Red nose, brown body, bad temper");
+        reptileRepo.save(reptile2);
 
         Need need1 = new Need("Medicine Twice Daily", reptile1);
         needRepo.save(need1);

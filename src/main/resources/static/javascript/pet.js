@@ -5,28 +5,28 @@ import {
 function displayPetView(mainEl, reptile, reptiles) {
 
     const singlePetDisplayAnchorEl = document.createElement("div");
-    singlePetDisplayAnchorEl.classList("anchor");
+    singlePetDisplayAnchorEl.classList.add("anchor");
 
     const singlePetDisplayContainerEl = document.createElement("div");
-    singlePetDisplayContainerEl.classList("container");
+    singlePetDisplayContainerEl.classList.add("container");
 
     const singlePetInfoSectionEl = document.createElement("section");
    
     const singlePetDisplayDivEl = document.createElement("div");
-    singlePetDisplayDivEl.classList("single_pet");
+    singlePetDisplayDivEl.classList.add("single_pet");
 
     const singlePetPetInfoDivEl = document.createElement("div");
-    singlePetPetInfoDivEl.classList("pet_info");
+    singlePetPetInfoDivEl.classList.add("pet_info");
 
     const singlePetPortraitDivEl = document.createElement("div");
-    singlePetPortraitDivEl.classList("pet_portrait");
+    singlePetPortraitDivEl.classList.add("pet_portrait");
 
     const singlePetPortraitEl = document.createElement("img");
     singlePetPortraitEl.src = reptile.image;
     singlePetPortraitEl.alt = "pet portrait";
 
     const singlePetDemographicsDivEl = document.createElement("div");
-    singlePetDemographicsDivEl.classList("pet_demographics");
+    singlePetDemographicsDivEl.classList.add("pet_demographics");
 
     const singlePetNameEl = document.createElement("p");
     singlePetNameEl.innerText = reptile.name;
@@ -51,13 +51,13 @@ function displayPetView(mainEl, reptile, reptiles) {
     const singlePetTopTableSectionEl = document.createElement("section");
 
     const singlePetTablesTopEl = document.createElement("div");
-    singlePetTablesTopEl.classList("tables_top");
+    singlePetTablesTopEl.classList.add("tables_top");
 
     const singlePetCareTableEl = document.createElement("div");
-    singlePetCareTableEl.classList("pet_care_table");
+    singlePetCareTableEl.classList.add("pet_care_table");
 
     const singlePetTableLinksEl = document.createElement("div");
-    singlePetTableLinksEl.classList("table_links");
+    singlePetTableLinksEl.classList.add("table_links");
 
     const singlePetTableTitleEl = document.createElement("h4");
     singlePetTableTitleEl.innerText = "Schedule";
@@ -67,7 +67,7 @@ function displayPetView(mainEl, reptile, reptiles) {
     singlePetAddScheduleEl.href = "#";
 
     const singlePetTableItemsDivEl = document.createElement("div");
-    singlePetTableItemsDivEl.classList("table_items");
+    singlePetTableItemsDivEl.classList.add("table_items");
 
     const singlePetTableItemsListEl = document.createElement("ul");
 
@@ -94,10 +94,10 @@ function displayPetView(mainEl, reptile, reptiles) {
     const singlePetTablesSectionEl = document.createElement("section");
 
     const singlePetCareNotesTableEl = document.createElement("div");
-    singlePetCareNotesTableEl.classList("pet_care_table");
+    singlePetCareNotesTableEl.classList.add("pet_care_table");
 
     const singlePetNotesTableLinksEl = document.createElement("div");
-    singlePetNotesTableLinksEl.classList("table_links");
+    singlePetNotesTableLinksEl.classList.add("table_links");
 
     const singlePetTableNotesTitleEl = document.createElement("h4");
     singlePetTableNotesTitleEl.innerText = "Notes";
@@ -107,7 +107,7 @@ function displayPetView(mainEl, reptile, reptiles) {
     singlePetAddNotesEl.href = "#";
 
     const singlePetTableNotesDivEl = document.createElement("div");
-    singlePetTableNotesDivEl.classList("table_items");
+    singlePetTableNotesDivEl.classList.add("table_items");
 
     const singlePetTableNotesListEl = document.createElement("ul");
 
@@ -123,10 +123,10 @@ function displayPetView(mainEl, reptile, reptiles) {
     
 
     const singlePetCareCalendarsTableEl = document.createElement("div");
-    singlePetCareCalendarsTableEl.classList("pet_care_table");
+    singlePetCareCalendarsTableEl.classList.add("pet_care_table");
 
     const singlePetCalendarsTableLinksEl = document.createElement("div");
-    singlePetCalendarsTableLinksEl.classList("table_links");
+    singlePetCalendarsTableLinksEl.classList.add("table_links");
 
     const singlePetTableCalendarsTitleEl = document.createElement("h4");
     singlePetTableCalendarsTitleEl.innerText = "Calendars";
@@ -136,7 +136,7 @@ function displayPetView(mainEl, reptile, reptiles) {
     singlePetAddCalendarsEl.href = "#";
 
     const singlePetTableCalendarsDivEl = document.createElement("div");
-    singlePetTableCalendarsDivEl.classList("table_items");
+    singlePetTableCalendarsDivEl.classList.add("table_items");
 
     const singlePetTableCalendarsListEl = document.createElement("ul");
 

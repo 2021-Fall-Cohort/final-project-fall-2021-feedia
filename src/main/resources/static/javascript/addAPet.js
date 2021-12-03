@@ -6,7 +6,7 @@ import {
     clearChildren
 } from "./app.js"
 
-function displayAddAPetView(mainEl, reptile){
+function displayAddAPetView(mainEl){
 
     const petFormTopEl = document.createElement("div");
     petFormTopEl.classList.add("Add_Pet_Form_Top");
@@ -130,7 +130,7 @@ function displayAddAPetView(mainEl, reptile){
         })
     })
 
-    mainEl.appendChild
+    mainEl.appendChild;
 }
 
 export{

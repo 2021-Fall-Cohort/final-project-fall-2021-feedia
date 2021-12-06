@@ -32,7 +32,7 @@ public class Populator implements CommandLineRunner {
         Reptile reptile1 = new Reptile("Higgins", "Red-Snouted Snake", 4, "Male","../images/kaiju.png", "Red nose, brown body, bad temper", 0f, 0f);
         reptileRepo.save(reptile1);
 
-        Reptile reptile2 = new Reptile("Higgins", "Red-Snouted Snake", 4, "Male","../images/kaiju.png", "Red nose, brown body, bad temper, 0f, 0f");
+        Reptile reptile2 = new Reptile("Higgins", "Red-Snouted Snake", 4, "Male","../images/kaiju.png", "Red nose, brown body, bad temper", 0f, 0f);
         reptileRepo.save(reptile2);
 
         Need need1 = new Need("Medicine Twice Daily", reptile1);

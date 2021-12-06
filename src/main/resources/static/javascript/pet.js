@@ -25,6 +25,17 @@ function displayPetView(mainEl, reptile, reptiles) {
     singlePetPortraitEl.src = reptile.image;
     singlePetPortraitEl.alt = "pet portrait";
 
+    const tempHumidityDivEl = document.createElement("div");
+    tempHumidityDivEl.classList.add("temp_humnidity_div")
+
+    const tempDisplayEl = document.createElement("p");
+    tempDisplayEl.classList.add("temp_data_display");
+    tempDisplayEl.innerText = reptile.temp;
+
+    const humidityDisplayEl = document.createElement("p");
+    humidityDisplayEl.classList.add("humidity_data_display");
+    humidityDisplayEl.innerText = reptile.humidity;
+
     const singlePetDemographicsDivEl = document.createElement("div");
     singlePetDemographicsDivEl.classList.add("pet_demographics");
 
@@ -42,8 +53,11 @@ function displayPetView(mainEl, reptile, reptiles) {
     singlePetInfoSectionEl.appendChild(singlePetDisplayDivEl);
     singlePetDisplayDivEl.appendChild(singlePetPetInfoDivEl);
     singlePetPetInfoDivEl.appendChild(singlePetPortraitDivEl);
+    singlePetPetInfoDivEl.appendChild(tempHumidityDivEl);
     singlePetPetInfoDivEl.appendChild(singlePetDemographicsDivEl);
     singlePetPortraitDivEl.appendChild(singlePetPortraitEl);
+    tempHumidityDivEl.appendChild(tempDisplayEl);
+    tempHumidityDivEl.appendChild(humidityDisplayEl);
     singlePetDemographicsDivEl.appendChild(singlePetNameEl);
     singlePetDemographicsDivEl.appendChild(singlePetAgeEl);
     singlePetDemographicsDivEl.appendChild(singlePetSexEl);

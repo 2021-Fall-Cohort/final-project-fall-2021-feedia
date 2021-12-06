@@ -1,5 +1,6 @@
 package com.wcci.Feedia.controller;
 
+import com.wcci.Feedia.model.Note;
 import com.wcci.Feedia.model.Reptile;
 import com.wcci.Feedia.model.Schedule;
 import com.wcci.Feedia.model.TempHumidity;
@@ -40,9 +41,9 @@ public class ReptileController {
     }
 
     @PostMapping("/")
-    public Iterable<Reptile> addReptile(@RequestBody Reptile reptile) {
+    public Reptile addReptile(@RequestBody Reptile reptile) {
         reptileRepo.save(reptile);
-        return reptileRepo.findAll();
+        return reptile;
     }
 
     @PutMapping("/")
@@ -53,22 +54,6 @@ public class ReptileController {
         return reptileRepo.findAll();
     }
 
-//    @PatchMapping("/{id}/updateTemp")
-//    public Reptile retrieveReptileTemperature(@PathVariable Long id, @RequestBody float newTemp){
-//        Reptile reptileToUpdate = reptileRepo.findById(id).get();
-//        reptileToUpdate.setTemp(newTemp);
-//        reptileRepo.save(reptileToUpdate);
-//        return reptileRepo.findById(id).get();
-//    }
-//
-//    @PatchMapping("/{id}/updateHumidity")
-//    public Reptile retrieveReptileHumidity(@PathVariable Long id, @RequestBody float newHumidity){
-//        Reptile reptileToUpdate = reptileRepo.findById(id).get();
-//        reptileToUpdate.setHumidity(newHumidity);
-//        reptileRepo.save(reptileToUpdate);
-//        return reptileRepo.findById(id).get();
-//    }
-
     @PatchMapping("/{id}/update")
     public Reptile updateReptileData(@PathVariable Long id, @RequestBody TempHumidity newData){
         Reptile reptileToUpdate = reptileRepo.findById(id).get();
@@ -76,7 +61,19 @@ public class ReptileController {
         reptileToUpdate.setTemp(newData.getTemp());
         reptileRepo.save(reptileToUpdate);
         return reptileRepo.findById(id).get();
-
     }
 
+    @DeleteMapping("/{id}")
+    public Iterable<Reptile> deleteReptile(@PathVariable Long id){
+        reptileRepo.deleteById(id);
+        return reptileRepo.findAll();
+    }
+
+    @PostMapping("/{id}/addNote")
+    public Reptile addNote(@PathVariable Long id, @RequestBody Note noteToAdd) {
+        Reptile reptileToEdit = reptileRepo.findById(id).get();
+        noteToAdd.setReptile(reptileToEdit);
+        noteRepo.save(noteToAdd);
+        return reptileRepo.findById(id).get();
+    }
 }

@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+   height: 12%;
+}
+
+.logo {
+  margin-left: 2%;
+}
+
+.site_links {
+margin-right: 2%;
+}
+
+.fa-egg {
+    margin-right: 10px;
+}
+
+.pet_overview_section {
+    margin-top:5%;
+    margin-left: 10%;
+    width: 80%;  
+}
+
+.pet_links {
+  display:flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.pet_section img {
+  margin-top: 3%;
+  margin-left: 3%;
+}
+
+.pet_section {
+  display: flex;
+  justify-content: space-between;
+  padding: 5%;
+  
+}
+
+.pet_overview_section section {
+  margin-top: 5%;
+}
+
+.pet_overview_section {
+  margin-bottom: 5%;
+}

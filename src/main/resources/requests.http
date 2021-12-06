@@ -1,0 +1,8 @@
+GET http://localhost:8080/reptiles/1
+
+###
+
+PATCH http://localhost:8080/reptiles/1/update
+Content-Type: application/json
+
+{"temp": 81,"humidity": 50}

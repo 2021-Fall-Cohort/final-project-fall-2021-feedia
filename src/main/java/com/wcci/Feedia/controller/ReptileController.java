@@ -3,11 +3,14 @@ package com.wcci.Feedia.controller;
 import com.wcci.Feedia.model.Note;
 import com.wcci.Feedia.model.Reptile;
 import com.wcci.Feedia.model.Schedule;
+import com.wcci.Feedia.model.TempHumidity;
 import com.wcci.Feedia.repository.NeedRepository;
 import com.wcci.Feedia.repository.NoteRepository;
 import com.wcci.Feedia.repository.ReptileRepository;
 import com.wcci.Feedia.repository.ScheduleRepository;
+import org.apache.tomcat.util.json.JSONParser;
 import org.springframework.web.bind.annotation.*;
+
 
 import java.util.Optional;
 
@@ -49,6 +52,15 @@ public class ReptileController {
             reptileRepo.save(reptileToEdit);
         }
         return reptileRepo.findAll();
+    }
+
+    @PatchMapping("/{id}/update")
+    public Reptile updateReptileData(@PathVariable Long id, @RequestBody TempHumidity newData){
+        Reptile reptileToUpdate = reptileRepo.findById(id).get();
+        reptileToUpdate.setHumidity(newData.getHumidity());
+        reptileToUpdate.setTemp(newData.getTemp());
+        reptileRepo.save(reptileToUpdate);
+        return reptileRepo.findById(id).get();
     }
 
     @DeleteMapping("/{id}")

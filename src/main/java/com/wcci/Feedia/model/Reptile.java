@@ -15,6 +15,8 @@ public class Reptile {
     private int age;
     private String sex;
     private String image;
+    private float temp;
+    private float humidity;
     private String description;
 
     @OneToMany(mappedBy = "reptile", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -26,13 +28,15 @@ public class Reptile {
     @OneToMany(mappedBy = "reptile", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Note> notes;
 
-    public Reptile(String name, String species, int age, String sex, String image, String description) {
+    public Reptile(String name, String species, int age, String gender, String image, String description, float temp, float humidity) {
         this.name = name;
         this.species = species;
         this.age = age;
         this.sex = sex;
         this.image = image;
         this.description = description;
+        this.temp = 0f;
+        this.humidity = 0f;
     }
 
     public Reptile(){
@@ -77,5 +81,25 @@ public class Reptile {
 
     public Collection<Note> getNotes() {
         return notes;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public float getTemp() {
+        return temp;
+    }
+
+    public float getHumidity() {
+        return humidity;
+    }
+
+    public void setTemp(float temp) {
+        this.temp = temp;
+    }
+
+    public void setHumidity(float humidity) {
+        this.humidity = humidity;
     }
 }

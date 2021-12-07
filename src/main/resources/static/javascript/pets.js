@@ -69,15 +69,11 @@ function displayPetsView(mainEl, reptiles){
 
         const petAgendaCalendarDivEl = document.createElement("div");
         petAgendaCalendarDivEl.classList.add('pet_calendar_div');
-        petAgendaCalendarDivEl.innerHTML = `<iframe src="https://calendar.google.com/calendar/embed?src=${reptile.myCalendar.googleCalendarId}&mode=AGENDA" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>`
+        petAgendaCalendarDivEl.innerHTML = `<iframe src="https://calendar.google.com/calendar/embed?src=${reptile.myCalendar.googleCalendarId}&mode=AGENDA&showPrint=0&showTabs=0&bgcolor=%231a8d26" style="border:solid 1px #777" width="400" height="300" frameborder="0" scrolling="no"></iframe>`
 
-        // const petAgendaCalendarEl = document.createElement("iframe");
-        // petAgendaCalendarEl.classList.add('single_pet_calendar');
-        // console.log(reptile.myCalendar.googleCalendarId);
-        // petAgendaCalendarEl.innerHTML = `src="https://calendar.google.com/calendar/embed?src=kgdiceanqa9aiota4od8r89shk@group.calendar.google.com&mode=AGENDA" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no">`
-        // petAgendaCalendarDivEl.appendChild(petAgendaCalendarEl);
-
-        const petMonthCalendarEl = document.createElement("div");
+        const petMonthCalendarDivEl = document.createElement("div");
+        petMonthCalendarDivEl.classList.add('pet-calendar-div');
+        petMonthCalendarDivEl.innerHTML = `<iframe src="https://calendar.google.com/calendar/embed?src=${reptile.myCalendar.googleCalendarId}&showPrint=0&showTabs=0&bgcolor=%231a8d26" style="border:solid 1px #777" width="400" height="300" frameborder="0" scrolling="no"></iframe>`
         //code to show calendar view
 
         tempHumidityDivEl.appendChild(tempDisplayEl);
@@ -86,7 +82,7 @@ function displayPetsView(mainEl, reptiles){
         singlePetSectionEl.appendChild(singlePetImageEl);
         singlePetSectionEl.appendChild(tempHumidityDivEl);
         singlePetSectionEl.appendChild(petAgendaCalendarDivEl);
-        singlePetSectionEl.appendChild(petMonthCalendarEl);
+        singlePetSectionEl.appendChild(petMonthCalendarDivEl);
         reptileSectionEl.appendChild(singlePetSectionEl);
 
         petOverviewSectionEl.appendChild(reptileSectionEl);

@@ -87,17 +87,13 @@ function displayPetView(mainEl, reptile, reptiles) {
     petAgendaCalendarDivEl.classList.add('pet_calendar_div');
     petAgendaCalendarDivEl.innerHTML = `<iframe src="https://calendar.google.com/calendar/embed?src=${reptile.myCalendar.googleCalendarId}&mode=AGENDA&showPrint=0&showTabs=0&bgcolor=%231a8d26" style="border:solid 1px #777" width="400" height="300" frameborder="0" scrolling="no"></iframe>`
 
-    const petMonthCalendarDivEl = document.createElement("div");
-    petMonthCalendarDivEl.classList.add('pet-calendar-div');
-    petMonthCalendarDivEl.innerHTML = `<iframe src="https://calendar.google.com/calendar/embed?src=${reptile.myCalendar.googleCalendarId}&showPrint=0&showTabs=0&bgcolor=%231a8d26" style="border:solid 1px #777" width="400" height="300" frameborder="0" scrolling="no"></iframe>`
-
     singlePetTopTableSectionEl.appendChild(singlePetTablesTopEl);
     singlePetTablesTopEl.appendChild(singlePetCareTableEl);
     singlePetCareTableEl.appendChild(singlePetTableLinksEl);
     singlePetCareTableEl.appendChild(singlePetTableItemsDivEl);
     singlePetTableLinksEl.appendChild(singlePetTableTitleEl);
     singlePetTableItemsDivEl.appendChild(petAgendaCalendarDivEl);
-    singlePetTableItemsDivEl.appendChild(petMonthCalendarDivEl);
+
 
     const singlePetTablesSectionEl = document.createElement("section");
 
@@ -197,15 +193,10 @@ function displayPetView(mainEl, reptile, reptiles) {
     const singlePetTableCalendarsDivEl = document.createElement("div");
     singlePetTableCalendarsDivEl.classList.add("table_items");
 
-    const petAgendaCalendarDivEl = document.createElement("div");
-    petAgendaCalendarDivEl.classList.add('pet_calendar_div');
-    petAgendaCalendarDivEl.innerHTML = `<iframe src="https://calendar.google.com/calendar/embed?src=${reptile.myCalendar.googleCalendarId}&mode=AGENDA&showPrint=0&showTabs=0&bgcolor=%231a8d26" style="border:solid 1px #777" width="400" height="300" frameborder="0" scrolling="no"></iframe>`
-
     const petMonthCalendarDivEl = document.createElement("div");
     petMonthCalendarDivEl.classList.add('pet-calendar-div');
     petMonthCalendarDivEl.innerHTML = `<iframe src="https://calendar.google.com/calendar/embed?src=${reptile.myCalendar.googleCalendarId}&showPrint=0&showTabs=0&bgcolor=%231a8d26" style="border:solid 1px #777" width="400" height="300" frameborder="0" scrolling="no"></iframe>`
        
-    singlePetTableCalendarsDivEl.appendChild(petAgendaCalendarDivEl);
     singlePetTableCalendarsDivEl.appendChild(petMonthCalendarDivEl);
     
     // const singlePetTableCalendarsListEl = document.createElement("ul");

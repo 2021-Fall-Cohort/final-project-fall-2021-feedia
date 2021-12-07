@@ -44,8 +44,25 @@ public class Populator implements CommandLineRunner {
         Need need1 = new Need("Medicine Twice Daily", reptile1);
         needRepo.save(need1);
 
-        Note note1 = new Note("Observation", "Stepped in its own poop on 11/22/2021 at 11:47 AM", true);
+        Note note1 = new Note("Observation:", "Stepped in its own poop on 11/22/2021 at 11:47 AM", true, reptile1);
         noteRepo.save(note1);
+//        note1.setReptile(reptile1);
+//        reptileRepo.save(reptile1);
+
+        Note note2 = new Note("Observation:", "Tried to eat newspaper.", true, reptile2);
+        noteRepo.save(note2);
+//        note2.setReptile(reptile2);
+//        reptileRepo.save(reptile2);
+
+        Note note3 = new Note("Observation:", "Tried to climb up the glass again.", true, reptile3);
+        noteRepo.save(note3);
+//        note3.setReptile(reptile3);
+//        reptileRepo.save(reptile3);
+
+        Note note4 = new Note("Observation:", "Couldn't find a few crickets.", true, reptile4);
+        noteRepo.save(note4);
+//        note4.setReptile(reptile4);
+//        reptileRepo.save(reptile4);
 
         Schedule schedule1 = new Schedule("Poop Laying", "Needs to go twice daily", 12, reptile1);
         scheduleRepo.save(schedule1);

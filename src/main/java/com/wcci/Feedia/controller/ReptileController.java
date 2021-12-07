@@ -43,6 +43,7 @@ public class ReptileController {
     @PostMapping("/")
     public Reptile addReptile(@RequestBody Reptile reptile) {
         reptileRepo.save(reptile);
+
         return reptile;
     }
 
@@ -69,11 +70,11 @@ public class ReptileController {
         return reptileRepo.findAll();
     }
 
-    @PostMapping("/{id}/addNote")
-    public Reptile addNote(@PathVariable Long id, @RequestBody Note noteToAdd) {
-        Reptile reptileToEdit = reptileRepo.findById(id).get();
-        noteToAdd.setReptile(reptileToEdit);
-        noteRepo.save(noteToAdd);
-        return reptileRepo.findById(id).get();
-    }
+//    @PostMapping("/{id}/addNote")
+//    public Reptile addNote(@PathVariable Long id, @RequestBody Note noteToAdd) {
+//        Reptile reptileToEdit = reptileRepo.findById(id).get();
+//        noteToAdd.setReptile(reptileToEdit);
+//        noteRepo.save(noteToAdd);
+//        return reptileRepo.findById(id).get();
+//    }
 }

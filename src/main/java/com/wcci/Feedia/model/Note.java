@@ -16,17 +16,17 @@ public class Note {
     @Lob
     private String description;
 
-
     private boolean isPinned;
 
     @ManyToOne
     @JsonIgnore
     private Reptile reptile;
 
-    public Note(String name, String description, boolean isPinned) {
+    public Note(String name, String description, boolean isPinned, Reptile reptile) {
         this.name = name;
         this.description = description;
         this.isPinned = isPinned;
+        this.reptile = reptile;
     }
 
     public Note() {

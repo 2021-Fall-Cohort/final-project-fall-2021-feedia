@@ -4,10 +4,8 @@ import com.wcci.Feedia.model.Note;
 import com.wcci.Feedia.model.Reptile;
 import com.wcci.Feedia.model.Schedule;
 import com.wcci.Feedia.model.TempHumidity;
-import com.wcci.Feedia.repository.NeedRepository;
-import com.wcci.Feedia.repository.NoteRepository;
-import com.wcci.Feedia.repository.ReptileRepository;
-import com.wcci.Feedia.repository.ScheduleRepository;
+import com.wcci.Feedia.model.GoogleCalendar;
+import com.wcci.Feedia.repository.*;
 import org.apache.tomcat.util.json.JSONParser;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,12 +22,14 @@ public class ReptileController {
     private NeedRepository needRepo;
     private NoteRepository noteRepo;
     private ScheduleRepository scheduleRepo;
+    private GoogleCalendarRepo googleCalendarRepo;
 
-    public ReptileController(ReptileRepository reptileRepo, NeedRepository needRepo, NoteRepository noteRepo, ScheduleRepository scheduleRepo) {
+    public ReptileController(ReptileRepository reptileRepo, NeedRepository needRepo, NoteRepository noteRepo, ScheduleRepository scheduleRepo, GoogleCalendarRepo googleCalendarRepo) {
         this.reptileRepo = reptileRepo;
         this.needRepo = needRepo;
         this.noteRepo = noteRepo;
         this.scheduleRepo = scheduleRepo;
+        this.googleCalendarRepo = googleCalendarRepo;
     }
 
     @GetMapping("/")
@@ -45,7 +45,9 @@ public class ReptileController {
     @PostMapping("/")
     public Reptile addReptile(@RequestBody Reptile reptile) throws GeneralSecurityException, IOException {
         reptileRepo.save(reptile);
+        reptile.myCalendar.setReptile(reptile);
         reptile.createCalendar();
+        googleCalendarRepo.save(reptile.getMyCalendar());
         return reptile;
     }
 

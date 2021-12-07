@@ -31,14 +31,20 @@ public class GoogleCalendar {
 
     @GeneratedValue
     @Id
-    private long id;
+    protected long id;
 
-    private String googleCalendarId;
+    protected String googleCalendarId;
 
     @OneToOne
-    private Reptile reptile;
+    @JsonIgnore
+    protected Reptile reptile;
 
     private static final String APPLICATION_NAME = "Google Calendar API Java Quickstart";
+
+    public void setReptile(Reptile reptile) {
+        this.reptile = reptile;
+    }
+
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
     private static final String TOKENS_DIRECTORY_PATH = "tokens";
 
@@ -51,6 +57,10 @@ public class GoogleCalendar {
 
     public long getId() {
         return id;
+    }
+
+    public Reptile getReptile() {
+        return reptile;
     }
 
     public GoogleCalendar() {

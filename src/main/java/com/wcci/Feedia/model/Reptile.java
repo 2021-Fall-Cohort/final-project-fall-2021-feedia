@@ -34,6 +34,9 @@ public class Reptile {
     private Collection<Note> notes;
 
 
+    public GoogleCalendar getMyCalendar() {
+        return myCalendar;
+    }
 
     public Reptile(String name, String species, int age, String sex, String image, String description, float temp, float humidity) throws GeneralSecurityException, IOException {
         this.name = name;

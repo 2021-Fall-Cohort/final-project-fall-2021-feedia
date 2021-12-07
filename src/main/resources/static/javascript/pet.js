@@ -2,6 +2,10 @@ import {
     clearChildren
 } from "./app.js"
 
+import{
+    displayPetsView
+} from "./pets.js"
+
 function displayPetView(mainEl, reptile, reptiles) {
 
     const singlePetDisplayAnchorEl = document.createElement("div");
@@ -25,6 +29,17 @@ function displayPetView(mainEl, reptile, reptiles) {
     singlePetPortraitEl.src = reptile.image;
     singlePetPortraitEl.alt = "pet portrait";
 
+    const tempHumidityDivEl = document.createElement("div");
+    tempHumidityDivEl.classList.add("temp_humnidity_div")
+
+    const tempDisplayEl = document.createElement("p");
+    tempDisplayEl.classList.add("temp_data_display");
+    tempDisplayEl.innerText = reptile.temp;
+
+    const humidityDisplayEl = document.createElement("p");
+    humidityDisplayEl.classList.add("humidity_data_display");
+    humidityDisplayEl.innerText = reptile.humidity;
+
     const singlePetDemographicsDivEl = document.createElement("div");
     singlePetDemographicsDivEl.classList.add("pet_demographics");
 
@@ -42,8 +57,11 @@ function displayPetView(mainEl, reptile, reptiles) {
     singlePetInfoSectionEl.appendChild(singlePetDisplayDivEl);
     singlePetDisplayDivEl.appendChild(singlePetPetInfoDivEl);
     singlePetPetInfoDivEl.appendChild(singlePetPortraitDivEl);
+    singlePetPetInfoDivEl.appendChild(tempHumidityDivEl);
     singlePetPetInfoDivEl.appendChild(singlePetDemographicsDivEl);
     singlePetPortraitDivEl.appendChild(singlePetPortraitEl);
+    tempHumidityDivEl.appendChild(tempDisplayEl);
+    tempHumidityDivEl.appendChild(humidityDisplayEl);
     singlePetDemographicsDivEl.appendChild(singlePetNameEl);
     singlePetDemographicsDivEl.appendChild(singlePetAgeEl);
     singlePetDemographicsDivEl.appendChild(singlePetSexEl);
@@ -105,6 +123,41 @@ function displayPetView(mainEl, reptile, reptiles) {
     const singlePetTableNotesTitleEl = document.createElement("h4");
     singlePetTableNotesTitleEl.innerText = "Notes";
 
+    const notesDisplayDivEl = document.createElement("div");
+    notesDisplayDivEl.classList.add("notes_display_div");
+
+    reptile.notes.forEach(note => {
+        const noteDisplayBoxEl = document.createElement("div");
+        noteDisplayBoxEl.classList.add("note_display_box");
+
+        const noteTitleEl = document.createElement("p");
+        noteTitleEl.innerText = note.name;
+
+        const noteTextEl = document.createElement("p");
+        noteTextEl.innerText = note.description;
+
+        const trashButtonIconEl = document.createElement("i");
+        trashButtonIconEl.classList.add("far");
+        trashButtonIconEl.classList.add("fa-trash-alt");
+        trashButtonIconEl.addEventListener("click", () => {
+            fetch(`http://localhost:8080/notes/${note.id}`, {
+                method: 'DELETE'
+            })
+            .then(res => res.json())
+            .then(reptile => {
+                clearChildren(mainEl);
+                displayPetView(mainEl, reptile);
+            })
+            .catch(err => console.error(err));
+        })
+
+        noteDisplayBoxEl.appendChild(noteTitleEl);
+        noteDisplayBoxEl.appendChild(noteTextEl);
+        noteDisplayBoxEl.appendChild(trashButtonIconEl);
+
+        notesDisplayDivEl.appendChild(noteDisplayBoxEl);
+    })
+
     const addNoteNameEl = document.createElement("input");
     addNoteNameEl.type = "text";
     addNoteNameEl.placeholder = "Note Title: ";
@@ -118,7 +171,24 @@ function displayPetView(mainEl, reptile, reptiles) {
     singlePetAddNotesEl.innerText = "Add Note";
     singlePetAddNotesEl.href = "#";
     singlePetAddNotesEl.addEventListener("click", () => {
-            // working on this as of Friday
+        const newNoteJson = {
+            "name": addNoteNameEl.value,
+            "description": addNoteTextAreaEl.value,
+            "isPinned": "True"
+        }
+        fetch(`http://localhost:8080/notes/${reptile.id}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newNoteJson)
+        })
+        .then(res => res.json())
+        .then(reptile => {
+            clearChildren(mainEl);
+            displayPetView(mainEl, reptile);
+        })
+        .catch(err => {console.error(err)})
     })
 
     singlePetAddNoteDivEl.appendChild(addNoteNameEl);
@@ -127,17 +197,17 @@ function displayPetView(mainEl, reptile, reptiles) {
 
 
 
-    const singlePetTableNotesDivEl = document.createElement("div");
-    singlePetTableNotesDivEl.classList.add("table_items");
+    // const singlePetTableNotesDivEl = document.createElement("div");
+    // singlePetTableNotesDivEl.classList.add("table_items");
 
-    const singlePetTableNotesListEl = document.createElement("ul");
+    // const singlePetTableNotesListEl = document.createElement("ul");
 
-    reptile.notes.forEach(note => {
-        const singlePetTableNoteEl = document.createElement("li");
-        singlePetTableNoteEl.innerText = note;
+    // reptile.notes.forEach(note => {
+    //     const singlePetTableNoteEl = document.createElement("li");
+    //     singlePetTableNoteEl.innerText = note;
 
-        singlePetTableNotesListEl.appendChild(singlePetTableNoteEl);
-    })
+    //     singlePetTableNotesListEl.appendChild(singlePetTableNoteEl);
+    // })
 
     
 
@@ -174,12 +244,27 @@ function displayPetView(mainEl, reptile, reptiles) {
     const singlePetTableCalendars3El = document.createElement("li");
     singlePetTableCalendars3El.innerText = "Placeholder";
 
+    const petArchiveTextEl = document.createElement("p");
+    petArchiveTextEl.innerText = "Archive";
+    petArchiveTextEl.addEventListener("click", () => {
+        fetch(`http://localhost:8080/reptiles/${reptile.id}`, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        .then(reptiles => {
+            clearChildren(mainEl);
+            displayPetsView(mainEl, reptiles);
+        })
+        .catch(err => console.error(err));
+    });
+
     singlePetTablesSectionEl.appendChild(singlePetCareNotesTableEl);
     singlePetCareNotesTableEl.appendChild(singlePetNotesTableLinksEl);
-    singlePetCareNotesTableEl.appendChild(singlePetTableNotesDivEl);
+    // singlePetCareNotesTableEl.appendChild(singlePetTableNotesDivEl);
     singlePetNotesTableLinksEl.appendChild(singlePetTableNotesTitleEl);
+    singlePetNotesTableLinksEl.appendChild(notesDisplayDivEl);
     singlePetNotesTableLinksEl.appendChild(singlePetAddNoteDivEl);
-    singlePetTableNotesDivEl.appendChild(singlePetTableNotesListEl);
+    // singlePetTableNotesDivEl.appendChild(singlePetTableNotesListEl);
     // singlePetTableNotesListEl.appendChild(singlePetTableNotes1El);
     // singlePetTableNotesListEl.appendChild(singlePetTableNotes2El);
     // singlePetTableNotesListEl.appendChild(singlePetTableNotes3El);
@@ -196,6 +281,7 @@ function displayPetView(mainEl, reptile, reptiles) {
 
     singlePetDisplayContainerEl.appendChild(singlePetTopTableSectionEl);
     singlePetDisplayContainerEl.appendChild(singlePetTablesSectionEl);
+    singlePetDisplayContainerEl.appendChild(petArchiveTextEl);
 
     mainEl.appendChild(singlePetDisplayAnchorEl);
     

@@ -56,13 +56,28 @@ function displayPetsView(mainEl, reptiles){
             displayPetView(mainEl, reptile);
         });
 
+        const tempHumidityDivEl = document.createElement("div");
+        tempHumidityDivEl.classList.add("temp_humnidity_div")
+    
+        const tempDisplayEl = document.createElement("p");
+        tempDisplayEl.classList.add("temp_data_display");
+        tempDisplayEl.innerText = reptile.temp;
+    
+        const humidityDisplayEl = document.createElement("p");
+        humidityDisplayEl.classList.add("humidity_data_display");
+        humidityDisplayEl.innerText = reptile.humidity;
+
         const petAgendaCalendarEl = document.createElement("div");
         //code to show agenda view
 
         const petMonthCalendarEl = document.createElement("div");
         //code to show calendar view
 
+        tempHumidityDivEl.appendChild(tempDisplayEl);
+        tempHumidityDivEl.appendChild(humidityDisplayEl);
+
         singlePetSectionEl.appendChild(singlePetImageEl);
+        singlePetSectionEl.appendChild(tempHumidityDivEl);
         singlePetSectionEl.appendChild(petAgendaCalendarEl);
         singlePetSectionEl.appendChild(petMonthCalendarEl);
         reptileSectionEl.appendChild(singlePetSectionEl);

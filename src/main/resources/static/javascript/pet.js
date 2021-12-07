@@ -15,6 +15,7 @@ function displayPetView(mainEl, reptile, reptiles) {
     singlePetDisplayContainerEl.classList.add("container");
 
     const singlePetInfoSectionEl = document.createElement("section");
+    singlePetInfoSectionEl.classList.add("first_section")
    
     const singlePetDisplayDivEl = document.createElement("div");
     singlePetDisplayDivEl.classList.add("single_pet");
@@ -29,8 +30,17 @@ function displayPetView(mainEl, reptile, reptiles) {
     singlePetPortraitEl.src = reptile.image;
     singlePetPortraitEl.alt = "pet portrait";
 
+    const petDataDivEl = document.createElement("div");
+    petDataDivEl.classList.add("pet_data_div");
+
+    const singlePetDemographicsDivEl = document.createElement("div");
+    singlePetDemographicsDivEl.classList.add("pet_demographics");
+
     const tempHumidityDivEl = document.createElement("div");
     tempHumidityDivEl.classList.add("temp_humnidity_div")
+
+    petDataDivEl.appendChild(singlePetDemographicsDivEl);
+    petDataDivEl.appendChild(tempHumidityDivEl);
 
     const tempDisplayEl = document.createElement("p");
     tempDisplayEl.classList.add("temp_data_display");
@@ -40,25 +50,21 @@ function displayPetView(mainEl, reptile, reptiles) {
     humidityDisplayEl.classList.add("humidity_data_display");
     humidityDisplayEl.innerText = 'Humidity: ' + reptile.humidity + '%';
 
-    const singlePetDemographicsDivEl = document.createElement("div");
-    singlePetDemographicsDivEl.classList.add("pet_demographics");
-
     const singlePetNameEl = document.createElement("p");
-    singlePetNameEl.innerText = reptile.name;
+    singlePetNameEl.innerText = 'Name: ' + reptile.name;
 
     const singlePetAgeEl = document.createElement("p");
-    singlePetAgeEl.innerText = reptile.age;
+    singlePetAgeEl.innerText = 'Age: ' + reptile.age;
 
     const singlePetSexEl = document.createElement("p");
-    singlePetSexEl.innerText = reptile.sex;
+    singlePetSexEl.innerText = 'Sex: ' + reptile.sex;
 
     singlePetDisplayAnchorEl.appendChild(singlePetDisplayContainerEl);
     singlePetDisplayContainerEl.appendChild(singlePetInfoSectionEl);
     singlePetInfoSectionEl.appendChild(singlePetDisplayDivEl);
     singlePetDisplayDivEl.appendChild(singlePetPetInfoDivEl);
     singlePetPetInfoDivEl.appendChild(singlePetPortraitDivEl);
-    singlePetPetInfoDivEl.appendChild(tempHumidityDivEl);
-    singlePetPetInfoDivEl.appendChild(singlePetDemographicsDivEl);
+    singlePetPetInfoDivEl.appendChild(petDataDivEl);
     singlePetPortraitDivEl.appendChild(singlePetPortraitEl);
     tempHumidityDivEl.appendChild(tempDisplayEl);
     tempHumidityDivEl.appendChild(humidityDisplayEl);
@@ -67,6 +73,7 @@ function displayPetView(mainEl, reptile, reptiles) {
     singlePetDemographicsDivEl.appendChild(singlePetSexEl);
 
     const singlePetTopTableSectionEl = document.createElement("section");
+    singlePetTopTableSectionEl.classList.add("second_section");
 
     const singlePetTablesTopEl = document.createElement("div");
     singlePetTablesTopEl.classList.add("tables_top");
@@ -87,8 +94,25 @@ function displayPetView(mainEl, reptile, reptiles) {
     petAgendaCalendarDivEl.classList.add('pet_calendar_div');
     petAgendaCalendarDivEl.innerHTML = `<iframe src="https://calendar.google.com/calendar/embed?src=${reptile.myCalendar.googleCalendarId}&mode=AGENDA&showPrint=0&showTabs=0&bgcolor=%231a8d26" style="border:solid 1px #777" width="400" height="300" frameborder="0" scrolling="no"></iframe>`
 
+    const singlePetCareCalendarsTableEl = document.createElement("div");
+    singlePetCareCalendarsTableEl.classList.add("pet_care_table");
+
+    const singlePetCalendarsTableLinksEl = document.createElement("div");
+    singlePetCalendarsTableLinksEl.classList.add("table_links");
+
+    const singlePetTableCalendarsTitleEl = document.createElement("h4");
+    singlePetTableCalendarsTitleEl.innerText = "Calendar";
+
+    const singlePetTableCalendarsDivEl = document.createElement("div");
+    singlePetTableCalendarsDivEl.classList.add("table_items");
+
+    const petMonthCalendarDivEl = document.createElement("div");
+    petMonthCalendarDivEl.classList.add('pet-calendar-div');
+    petMonthCalendarDivEl.innerHTML = `<iframe src="https://calendar.google.com/calendar/embed?src=${reptile.myCalendar.googleCalendarId}&showPrint=0&showTabs=0&bgcolor=%231a8d26" style="border:solid 1px #777" width="400" height="300" frameborder="0" scrolling="no"></iframe>`
+
     singlePetTopTableSectionEl.appendChild(singlePetTablesTopEl);
     singlePetTablesTopEl.appendChild(singlePetCareTableEl);
+    singlePetTablesTopEl.appendChild(singlePetCareCalendarsTableEl);
     singlePetCareTableEl.appendChild(singlePetTableLinksEl);
     singlePetCareTableEl.appendChild(singlePetTableItemsDivEl);
     singlePetTableLinksEl.appendChild(singlePetTableTitleEl);
@@ -96,13 +120,14 @@ function displayPetView(mainEl, reptile, reptiles) {
 
 
     const singlePetTablesSectionEl = document.createElement("section");
+    singlePetTablesSectionEl.classList.add("third_section");
 
     const singlePetCareNotesTableEl = document.createElement("div");
     singlePetCareNotesTableEl.classList.add("pet_care_table");
 
     const singlePetNotesTableLinksEl = document.createElement("div");
     singlePetNotesTableLinksEl.classList.add("table_links");
-
+    
     const singlePetAddNoteDivEl = document.createElement("div");
     singlePetAddNoteDivEl.classList.add("add_note_section");
 
@@ -177,25 +202,15 @@ function displayPetView(mainEl, reptile, reptiles) {
         .catch(err => {console.error(err)})
     })
 
+    const notesTitleAndNotesDiv = document.createElement("div");
+    notesTitleAndNotesDiv.classList.add("notes_display_section");
+    notesTitleAndNotesDiv.appendChild(singlePetTableNotesTitleEl);
+    notesTitleAndNotesDiv.appendChild(notesDisplayDivEl);
+
+
     singlePetAddNoteDivEl.appendChild(addNoteNameEl);
     singlePetAddNoteDivEl.appendChild(addNoteTextAreaEl);
     singlePetAddNoteDivEl.appendChild(singlePetAddNotesEl);
-    
-    const singlePetCareCalendarsTableEl = document.createElement("div");
-    singlePetCareCalendarsTableEl.classList.add("pet_care_table");
-
-    const singlePetCalendarsTableLinksEl = document.createElement("div");
-    singlePetCalendarsTableLinksEl.classList.add("table_links");
-
-    const singlePetTableCalendarsTitleEl = document.createElement("h4");
-    singlePetTableCalendarsTitleEl.innerText = "Calendars";
-
-    const singlePetTableCalendarsDivEl = document.createElement("div");
-    singlePetTableCalendarsDivEl.classList.add("table_items");
-
-    const petMonthCalendarDivEl = document.createElement("div");
-    petMonthCalendarDivEl.classList.add('pet-calendar-div');
-    petMonthCalendarDivEl.innerHTML = `<iframe src="https://calendar.google.com/calendar/embed?src=${reptile.myCalendar.googleCalendarId}&showPrint=0&showTabs=0&bgcolor=%231a8d26" style="border:solid 1px #777" width="400" height="300" frameborder="0" scrolling="no"></iframe>`
        
     singlePetTableCalendarsDivEl.appendChild(petMonthCalendarDivEl);
     
@@ -226,11 +241,10 @@ function displayPetView(mainEl, reptile, reptiles) {
 
     singlePetTablesSectionEl.appendChild(singlePetCareNotesTableEl);
     singlePetCareNotesTableEl.appendChild(singlePetNotesTableLinksEl);
-    singlePetNotesTableLinksEl.appendChild(singlePetTableNotesTitleEl);
-    singlePetNotesTableLinksEl.appendChild(notesDisplayDivEl);
+    singlePetNotesTableLinksEl.appendChild(notesTitleAndNotesDiv);
     singlePetNotesTableLinksEl.appendChild(singlePetAddNoteDivEl);
 
-    singlePetTablesSectionEl.appendChild(singlePetCareCalendarsTableEl);
+    // singlePetTablesSectionEl.appendChild(singlePetCareCalendarsTableEl);
     singlePetCareCalendarsTableEl.appendChild(singlePetCalendarsTableLinksEl);    
     singlePetCareCalendarsTableEl.appendChild(singlePetTableCalendarsDivEl);
     singlePetCalendarsTableLinksEl.appendChild(singlePetTableCalendarsTitleEl);

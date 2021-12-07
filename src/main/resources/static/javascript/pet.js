@@ -34,11 +34,11 @@ function displayPetView(mainEl, reptile, reptiles) {
 
     const tempDisplayEl = document.createElement("p");
     tempDisplayEl.classList.add("temp_data_display");
-    tempDisplayEl.innerText = reptile.temp;
+    tempDisplayEl.innerText = 'Temperature: ' + reptile.temp + '°C';
 
     const humidityDisplayEl = document.createElement("p");
     humidityDisplayEl.classList.add("humidity_data_display");
-    humidityDisplayEl.innerText = reptile.humidity;
+    humidityDisplayEl.innerText = 'Humidity: ' + reptile.humidity + '%';
 
     const singlePetDemographicsDivEl = document.createElement("div");
     singlePetDemographicsDivEl.classList.add("pet_demographics");

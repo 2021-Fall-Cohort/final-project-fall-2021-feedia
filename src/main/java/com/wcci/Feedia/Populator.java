@@ -4,10 +4,7 @@ import com.wcci.Feedia.model.Need;
 import com.wcci.Feedia.model.Note;
 import com.wcci.Feedia.model.Reptile;
 import com.wcci.Feedia.model.Schedule;
-import com.wcci.Feedia.repository.NeedRepository;
-import com.wcci.Feedia.repository.NoteRepository;
-import com.wcci.Feedia.repository.ReptileRepository;
-import com.wcci.Feedia.repository.ScheduleRepository;
+import com.wcci.Feedia.repository.*;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -18,12 +15,14 @@ public class Populator implements CommandLineRunner {
     private NeedRepository needRepo;
     private NoteRepository noteRepo;
     private ScheduleRepository scheduleRepo;
+    private GoogleCalendarRepo googleCalendarRepo;
 
-    public Populator(ReptileRepository reptileRepo, NeedRepository needRepo, NoteRepository noteRepo, ScheduleRepository scheduleRepo) {
+    public Populator(ReptileRepository reptileRepo, NeedRepository needRepo, NoteRepository noteRepo, ScheduleRepository scheduleRepo, GoogleCalendarRepo googleCalendarRepo) {
         this.reptileRepo = reptileRepo;
         this.needRepo = needRepo;
         this.noteRepo = noteRepo;
         this.scheduleRepo = scheduleRepo;
+        this.googleCalendarRepo = googleCalendarRepo;
     }
 
     @Override
@@ -31,15 +30,28 @@ public class Populator implements CommandLineRunner {
 
         Reptile reptile1 = new Reptile("Higgins", "Corn Snake", 4, "Male","../images/kaiju.png", "Brown body, bad temper", 0f, 0f);
         reptileRepo.save(reptile1);
+        reptile1.createCalendar();
+        reptile1.myCalendar.setReptile(reptile1);
+        googleCalendarRepo.save(reptile1.getMyCalendar());
+
 
         Reptile reptile2 = new Reptile("Webster", "Bearded Dragon", 6, "Male","../images/webster.jpg", "Loves crickets and kale", 0f, 0f);
         reptileRepo.save(reptile2);
+        reptile2.createCalendar();
+        reptile2.myCalendar.setReptile(reptile2);
+        googleCalendarRepo.save(reptile2.getMyCalendar());
 
         Reptile reptile3 = new Reptile("Ginger", "Leopard Gecko", 3, "Female","../images/ginger.jpg", "Loves to eat anything", 0f, 0f);
         reptileRepo.save(reptile3);
+        reptile3.createCalendar();
+        reptile3.myCalendar.setReptile(reptile3);
+        googleCalendarRepo.save(reptile3.getMyCalendar());
 
         Reptile reptile4 = new Reptile("Cosmo", "Chameleon", 4, "Male","../images/cosmo.jpg", "Likes staring at the wall", 0f, 0f);
         reptileRepo.save(reptile4);
+        reptile4.createCalendar();
+        reptile4.myCalendar.setReptile(reptile4);
+        googleCalendarRepo.save(reptile4.getMyCalendar());
 
         Need need1 = new Need("Medicine Twice Daily", reptile1);
         needRepo.save(need1);

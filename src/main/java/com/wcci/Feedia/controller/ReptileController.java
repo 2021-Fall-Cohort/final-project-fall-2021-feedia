@@ -12,6 +12,8 @@ import org.apache.tomcat.util.json.JSONParser;
 import org.springframework.web.bind.annotation.*;
 
 
+import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.Optional;
 
 @RestController
@@ -41,8 +43,9 @@ public class ReptileController {
     }
 
     @PostMapping("/")
-    public Reptile addReptile(@RequestBody Reptile reptile) {
+    public Reptile addReptile(@RequestBody Reptile reptile) throws GeneralSecurityException, IOException {
         reptileRepo.save(reptile);
+        reptile.createCalendar();
         return reptile;
     }
 

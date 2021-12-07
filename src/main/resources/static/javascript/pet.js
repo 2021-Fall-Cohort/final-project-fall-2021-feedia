@@ -197,16 +197,27 @@ function displayPetView(mainEl, reptile, reptiles) {
     const singlePetTableCalendarsDivEl = document.createElement("div");
     singlePetTableCalendarsDivEl.classList.add("table_items");
 
-    const singlePetTableCalendarsListEl = document.createElement("ul");
+    const petAgendaCalendarDivEl = document.createElement("div");
+    petAgendaCalendarDivEl.classList.add('pet_calendar_div');
+    petAgendaCalendarDivEl.innerHTML = `<iframe src="https://calendar.google.com/calendar/embed?src=${reptile.myCalendar.googleCalendarId}&mode=AGENDA&showPrint=0&showTabs=0&bgcolor=%231a8d26" style="border:solid 1px #777" width="400" height="300" frameborder="0" scrolling="no"></iframe>`
 
-    const singlePetTableCalendars1El = document.createElement("li");
-    singlePetTableCalendars1El.innerText = "Placeholder";
+    const petMonthCalendarDivEl = document.createElement("div");
+    petMonthCalendarDivEl.classList.add('pet-calendar-div');
+    petMonthCalendarDivEl.innerHTML = `<iframe src="https://calendar.google.com/calendar/embed?src=${reptile.myCalendar.googleCalendarId}&showPrint=0&showTabs=0&bgcolor=%231a8d26" style="border:solid 1px #777" width="400" height="300" frameborder="0" scrolling="no"></iframe>`
+       
+    singlePetTableCalendarsDivEl.appendChild(petAgendaCalendarDivEl);
+    singlePetTableCalendarsDivEl.appendChild(petMonthCalendarDivEl);
+    
+    // const singlePetTableCalendarsListEl = document.createElement("ul");
 
-    const singlePetTableCalendars2El = document.createElement("li");
-    singlePetTableCalendars2El.innerText = "Placeholder";
+    // const singlePetTableCalendars1El = document.createElement("li");
+    // singlePetTableCalendars1El.innerText = "Placeholder";
 
-    const singlePetTableCalendars3El = document.createElement("li");
-    singlePetTableCalendars3El.innerText = "Placeholder";
+    // const singlePetTableCalendars2El = document.createElement("li");
+    // singlePetTableCalendars2El.innerText = "Placeholder";
+
+    // const singlePetTableCalendars3El = document.createElement("li");
+    // singlePetTableCalendars3El.innerText = "Placeholder";
 
     const petArchiveTextEl = document.createElement("p");
     petArchiveTextEl.innerText = "Archive";
@@ -233,10 +244,10 @@ function displayPetView(mainEl, reptile, reptiles) {
     singlePetCareCalendarsTableEl.appendChild(singlePetTableCalendarsDivEl);
     singlePetCalendarsTableLinksEl.appendChild(singlePetTableCalendarsTitleEl);
     // singlePetCalendarsTableLinksEl.appendChild(singlePetAddCalendarsEl);
-    singlePetTableCalendarsDivEl.appendChild(singlePetTableCalendarsListEl);
-    singlePetTableCalendarsListEl.appendChild(singlePetTableCalendars1El);
-    singlePetTableCalendarsListEl.appendChild(singlePetTableCalendars2El);
-    singlePetTableCalendarsListEl.appendChild(singlePetTableCalendars3El);
+    // singlePetTableCalendarsDivEl.appendChild(singlePetTableCalendarsListEl);
+    // singlePetTableCalendarsListEl.appendChild(singlePetTableCalendars1El);
+    // singlePetTableCalendarsListEl.appendChild(singlePetTableCalendars2El);
+    // singlePetTableCalendarsListEl.appendChild(singlePetTableCalendars3El);
 
     singlePetDisplayContainerEl.appendChild(singlePetTopTableSectionEl);
     singlePetDisplayContainerEl.appendChild(singlePetTablesSectionEl);

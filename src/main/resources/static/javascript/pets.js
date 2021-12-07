@@ -67,8 +67,15 @@ function displayPetsView(mainEl, reptiles){
         humidityDisplayEl.classList.add("humidity_data_display");
         humidityDisplayEl.innerText = reptile.humidity;
 
-        const petAgendaCalendarEl = document.createElement("div");
-        //code to show agenda view
+        const petAgendaCalendarDivEl = document.createElement("div");
+        petAgendaCalendarDivEl.classList.add('pet_calendar_div');
+        petAgendaCalendarDivEl.innerHTML = `<iframe src="https://calendar.google.com/calendar/embed?src=${reptile.myCalendar.googleCalendarId}&mode=AGENDA" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no"></iframe>`
+
+        // const petAgendaCalendarEl = document.createElement("iframe");
+        // petAgendaCalendarEl.classList.add('single_pet_calendar');
+        // console.log(reptile.myCalendar.googleCalendarId);
+        // petAgendaCalendarEl.innerHTML = `src="https://calendar.google.com/calendar/embed?src=kgdiceanqa9aiota4od8r89shk@group.calendar.google.com&mode=AGENDA" style="border:solid 1px #777" width="800" height="600" frameborder="0" scrolling="no">`
+        // petAgendaCalendarDivEl.appendChild(petAgendaCalendarEl);
 
         const petMonthCalendarEl = document.createElement("div");
         //code to show calendar view
@@ -78,7 +85,7 @@ function displayPetsView(mainEl, reptiles){
 
         singlePetSectionEl.appendChild(singlePetImageEl);
         singlePetSectionEl.appendChild(tempHumidityDivEl);
-        singlePetSectionEl.appendChild(petAgendaCalendarEl);
+        singlePetSectionEl.appendChild(petAgendaCalendarDivEl);
         singlePetSectionEl.appendChild(petMonthCalendarEl);
         reptileSectionEl.appendChild(singlePetSectionEl);
 

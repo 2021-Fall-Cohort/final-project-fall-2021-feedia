@@ -1,4 +1,5 @@
 package com.wcci.Feedia.model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.google.api.client.auth.oauth2.Credential;
 import com.google.api.client.extensions.java6.auth.oauth2.AuthorizationCodeInstalledApp;
 import com.google.api.client.extensions.jetty.auth.oauth2.LocalServerReceiver;
@@ -14,6 +15,7 @@ import com.google.api.services.calendar.Calendar;
 import com.google.api.services.calendar.CalendarScopes;
 import com.google.api.services.calendar.model.*;
 
+import javax.persistence.*;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,11 +26,17 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
+@Entity
 public class GoogleCalendar {
 
-    private String summary;
-    private String timezone;
-    private String id;
+    @GeneratedValue
+    @Id
+    private long id;
+
+    private String googleCalendarId;
+
+    @OneToOne
+    private Reptile reptile;
 
     private static final String APPLICATION_NAME = "Google Calendar API Java Quickstart";
     private static final JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance();
@@ -37,25 +45,19 @@ public class GoogleCalendar {
     private static final List<String> SCOPES = Collections.singletonList(CalendarScopes.CALENDAR);
     private static final String CREDENTIALS_FILE_PATH = "/credentials.json";
 
-    public String getSummary() {
-        return summary;
+    public String getGoogleCalendarId() {
+        return googleCalendarId;
     }
 
-    public String getTimezone() {
-        return timezone;
-    }
-
-    public String getId() {
+    public long getId() {
         return id;
     }
 
-    public GoogleCalendar(String summary, String timezone) {
-        this.summary = summary;
-        this.timezone = timezone;
-        this.id = "0";
+    public GoogleCalendar() {
+            this.googleCalendarId = "0";
     }
 
-    private static Credential getCredentials(final NetHttpTransport HTTP_TRANSPORT) throws IOException {
+    public static Credential getCredentials(final NetHttpTransport HTTP_TRANSPORT) throws IOException {
         // Load client secrets.
         InputStream in = GoogleCalendar.class.getResourceAsStream(CREDENTIALS_FILE_PATH);
         if (in == null) {
@@ -73,19 +75,19 @@ public class GoogleCalendar {
         return new AuthorizationCodeInstalledApp(flow, receiver).authorize("user");
     }
 
-    public void createCalendar() throws IOException, GeneralSecurityException{
+    public void createCalendar(String calendarName) throws IOException, GeneralSecurityException{
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         Calendar service = new Calendar.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
                 .setApplicationName(APPLICATION_NAME)
                 .build();
 
         com.google.api.services.calendar.model.Calendar calendar = new com.google.api.services.calendar.model.Calendar();
-        calendar.setSummary(summary);
-        calendar.setTimeZone(timezone);
+        calendar.setSummary(calendarName);
+        calendar.setTimeZone("America/New_York");
 
         com.google.api.services.calendar.model.Calendar createdCalendar = service.calendars().insert(calendar).execute();
 
-        id = createdCalendar.getId();
+        googleCalendarId = createdCalendar.getId();
     }
 
     public void getNextEventTime() throws IOException, GeneralSecurityException {
@@ -96,7 +98,7 @@ public class GoogleCalendar {
 
 
         DateTime now = new DateTime(System.currentTimeMillis());
-        Events events = service.events().list(id)
+        Events events = service.events().list(googleCalendarId)
                 .setMaxResults(1)
                 .setTimeMin(now)
                 .setOrderBy("startTime")
@@ -145,13 +147,13 @@ public class GoogleCalendar {
         DateTime startDateTime = new DateTime("2021-12-02T12:30:00.000-05:00");
         EventDateTime start = new EventDateTime()
                 .setDateTime(startDateTime)
-                .setTimeZone(timezone);
+                .setTimeZone("America/New_York");
         testEvent.setStart(start);
 
         DateTime endDateTime = new DateTime("2021-12-03T15:00:00.000-05:00");
         EventDateTime end = new EventDateTime()
                 .setDateTime(endDateTime)
-                .setTimeZone(timezone);
+                .setTimeZone("America/New_York");
         testEvent.setEnd(end);
 
         String[] recurrence = new String[] {"RRULE:FREQ=DAILY;COUNT=2"};
@@ -170,7 +172,7 @@ public class GoogleCalendar {
                 .setOverrides(Arrays.asList(reminderOverrides));
         testEvent.setReminders(reminders);
 
-        String calendarId = id;
+        String calendarId = googleCalendarId;
         testEvent = service.events().insert(calendarId, testEvent).execute();
         System.out.printf("Event created: %s\n", testEvent.getHtmlLink());
 

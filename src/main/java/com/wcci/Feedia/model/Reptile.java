@@ -1,6 +1,8 @@
 package com.wcci.Feedia.model;
 
 import javax.persistence.*;
+import java.io.IOException;
+import java.security.GeneralSecurityException;
 import java.util.Collection;
 
 @Entity
@@ -19,6 +21,9 @@ public class Reptile {
     private float humidity;
     private String description;
 
+    @OneToOne(mappedBy = "reptile", cascade = CascadeType.ALL, orphanRemoval = true)
+    public GoogleCalendar myCalendar = new GoogleCalendar();
+
     @OneToMany(mappedBy = "reptile", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Need> needs;
 
@@ -28,7 +33,9 @@ public class Reptile {
     @OneToMany(mappedBy = "reptile", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<Note> notes;
 
-    public Reptile(String name, String species, int age, String sex, String image, String description, float temp, float humidity) {
+
+
+    public Reptile(String name, String species, int age, String sex, String image, String description, float temp, float humidity) throws GeneralSecurityException, IOException {
         this.name = name;
         this.species = species;
         this.age = age;
@@ -97,5 +104,9 @@ public class Reptile {
 
     public void setHumidity(float humidity) {
         this.humidity = humidity;
+    }
+
+    public void createCalendar() throws GeneralSecurityException, IOException {
+        myCalendar.createCalendar(name);
     }
 }

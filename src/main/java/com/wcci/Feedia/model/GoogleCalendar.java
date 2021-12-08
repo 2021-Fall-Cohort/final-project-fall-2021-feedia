@@ -39,7 +39,7 @@ public class GoogleCalendar {
     @JsonIgnore
     protected Reptile reptile;
 
-    private static final String APPLICATION_NAME = "Google Calendar API Java Quickstart";
+    private static final String APPLICATION_NAME = "Feedia";
 
     public void setReptile(Reptile reptile) {
         this.reptile = reptile;
@@ -149,33 +149,35 @@ public class GoogleCalendar {
         }
     }
 
-    public void createEvent() throws IOException, GeneralSecurityException {
+    public void createEvent(String eventSummary, String eventLocation, String eventDescription, String eventStartTime, String eventEndTime) throws IOException, GeneralSecurityException {
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         Calendar service = new Calendar.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
                 .setApplicationName(APPLICATION_NAME)
                 .build();
 
         Event testEvent = new Event()
-                .setSummary("Test Event Indicator Light")
-                .setLocation("4249 Vista Walk Ln, Powell Ohio")
-                .setDescription("This is a test event that we are adding");
-        DateTime startDateTime = new DateTime("2021-12-02T12:30:00.000-05:00");
+                .setSummary(eventSummary)
+                .setLocation(eventLocation)
+                .setDescription(eventDescription);
+        DateTime startDateTime = new DateTime(eventStartTime);
+        // "2021-12-02T12:30:00.000-05:00"
         EventDateTime start = new EventDateTime()
                 .setDateTime(startDateTime)
                 .setTimeZone("America/New_York");
         testEvent.setStart(start);
 
-        DateTime endDateTime = new DateTime("2021-12-03T15:00:00.000-05:00");
+        DateTime endDateTime = new DateTime(eventEndTime);
+        // "2021-12-03T15:00:00.000-05:00"
         EventDateTime end = new EventDateTime()
                 .setDateTime(endDateTime)
                 .setTimeZone("America/New_York");
         testEvent.setEnd(end);
 
-        String[] recurrence = new String[] {"RRULE:FREQ=DAILY;COUNT=2"};
+        String[] recurrence = new String[] {"RRULE:FREQ=WEEKLY;COUNT=50"};
         testEvent.setRecurrence(Arrays.asList(recurrence));
 
         EventAttendee[] attendees = new EventAttendee[] {
-                new EventAttendee().setEmail("joshnotwright2@gmail.com"),
+                new EventAttendee().setEmail("feediaapplication@gmail.com"),
         };
         testEvent.setAttendees(Arrays.asList(attendees));
 

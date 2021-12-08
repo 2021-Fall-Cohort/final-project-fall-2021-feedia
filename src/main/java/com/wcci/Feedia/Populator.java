@@ -31,6 +31,8 @@ public class Populator implements CommandLineRunner {
         Reptile reptile1 = new Reptile("Kaiju", "Corn Snake", 4, "Male","../images/kaiju.png", "Brown body, bad temper", 0f, 0f);
         reptileRepo.save(reptile1);
         reptile1.createCalendar();
+        reptile1.myCalendar.createEvent("Feed Yo Lizzzzard", "My House",
+                "I've gotta remember to feed this guy", "2021-12-08T12:30:00.000-05:00", "2021-12-08T12:45:00.000-05:00");
         reptile1.myCalendar.setReptile(reptile1);
         googleCalendarRepo.save(reptile1.getMyCalendar());
 

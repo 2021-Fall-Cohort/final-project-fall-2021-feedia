@@ -40,13 +40,13 @@ function buildHeader() {
         displayAddAPetView(mainEl);
     })
 
+     const addPetITagEl = document.createElement("i");
+    addPetITagEl.classList.add("fa-egg");
+    addPetITagEl.classList.add("fas");
+
     const addPetATagEl = document.createElement("a");
     addPetATagEl.href = "#";
     addPetATagEl.innerText = "Add Pet";
-
-    const addPetITagEl = document.createElement("i");
-    addPetITagEl.classList.add("fa-egg");
-    addPetITagEl.classList.add("fas");
 
     addPetButtonDivEl.appendChild(addPetPTagEl);
     addPetPTagEl.appendChild(addPetATagEl);

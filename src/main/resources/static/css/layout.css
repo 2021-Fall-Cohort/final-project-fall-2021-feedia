@@ -1,6 +1,11 @@
 * {
     margin: 0;
 }
+.container {
+  position:relative;
+  height: 100vh;
+
+}
 
 #header {
   display: flex;
@@ -53,26 +58,69 @@ margin-right: 2%;
   margin-bottom: 5%;
 }
 
-.first_section {
-  display: flex;
-}
-
 .pet_info {
+  margin: 8%;
   display: flex;
+  align-items: center;
+  
 }
 
-.second_section {
+.table_links {
   display: flex;
+  justify-content: space-between;
+  padding: 2%;
+}
+
+.pet_demographics {
+  margin-left: 5%;
+}
+
+.pet_care_table {
+  margin: 5%;
+  margin-bottom: 5%; 
 }
 
 .tables_top {
   display: flex;
+  justify-content: space-between;
 }
 
-.third_section {
-  display: flex;
+.pet-calendar-div {
+    margin:5%;
+    
+ }
+
+.add_pet_form_top{
+  margin: 2%;
+  margin-left: 2%;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.add_note_section {
+.import {
   display: flex;
+  justify-content: right;
 }
+
+.basic_input {
+  display: flex;
+  padding: 1%;
+  margin-left: 3%
+  
+}
+
+.input_continued {
+  display: flex;
+  padding: 1%;
+  margin-left: 3%;
+}
+
+.description {
+  justify-content: center;
+  margin-left: 5%;
+}
+
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100

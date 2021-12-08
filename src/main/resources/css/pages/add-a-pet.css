@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.anchor{
+    width: 100%;
+    max-width: 1920px;
+}
+.container{
+    width: 100%;
+}
+/*Header section*/
+.header-section{
+    width: 100%;
+    background: green;
+}
+.header-section #header{
+    width: 100%;
+}
+#header .logo-holder{
+    width: 200px;
+    padding: 10px;
+}
+#header img{
+    max-width: 100%;
+}
+/* Breadcrumb Section */
+.breadcrumb-section{
+    width: 100%;
+    background: #fff;
+    margin-bottom: 20px;
+}
+.breadcrumb{
+    width: 100%;
+    padding: 10px;
+    background: url("../../images/add-pet-back.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain
+}
+.title-link{
+    width: 100%;
+}
+.title-link > span{
+    line-height: 2.1em;
+    font-size: 2em;
+}
+.title-link .breadcrumb-text{
+    width: 100%;
+    font-size: .8em;
+    padding-left: 6px;
+}
+.breadcrumb-text a{
+    text-decoration: none;
+    color: #636363;
+}
+/* -- Form Styles -- */
+.add-pet-form-section{
+    width: 100%;
+}
+.add-pet-form-section .container{
+    padding: 30px;
+}
+.container{
+    width: 100%;
+}
+.container .row{
+    width: 100%;
+    display: flex;
+}
+.row .col-6{
+    width: 48%;
+}
+.row .col-4{
+    width: 31%;
+}
+.row .col-8{
+    width: 65%;
+}
+.pull-right{
+    float: right;
+}
+.form-field > label{
+    width: 100%;
+    display: block;
+    margin-bottom: 5px;
+}
+.form-field .form-group{
+    width: 100%;
+}
+.form-group input,.form-group select,.form-group text-area{
+    width: 100%;
+    padding: 5px;
+    border: 1px solid grey;
+    border-radius: 4px;
+}
+.form-header{
+    border-bottom: 1px solid #666;
+    padding-bottom: 10px
+}

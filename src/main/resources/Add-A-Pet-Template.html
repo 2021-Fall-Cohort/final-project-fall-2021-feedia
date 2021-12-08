@@ -7,20 +7,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/layout.css">
+<!--    <link rel="stylesheet" href="css/style.css">-->
+<!--    <link rel="stylesheet" href="css/layout.css">-->
+    <link rel="stylesheet" href="css/pages/add-a-pet.css">
 </head>
 
 <body>
     <div class="anchor">
         <div class="container">
-            <section>
+            <section class="header-section">
                 <header id="header">
-                    <img src="images/feedia_logo.png" alt="site logo" class="logo">
-                    <div class="site_links">
-                        <p><a href="#"><i class="fas fa-egg"></i>Add Pet</a></p>
+                    <div class="logo-holder">
+                        <img src="images/feedia_logo_small.png" alt="site logo" class="logo">
                     </div>
                 </header>
+            </section>
+            <section class="breadcrumb-section">
+                <div class="breadcrumb">
+                    <div class="title-link">
+                        <span>Add Pet</span>
+                        <p class="breadcrumb-text"><a href="#">HOME</a><span> > </span> <a href="javascript: void(0);">ADD PET</a> </p>
+                    </div>
+                </div>
+            </section>
+            <section class="add-pet-form-section">
+                <div class="container">
+                    <div class="row form-header">
+                        <div class="col-8">
+                            <h6>Add Pet Here</h6>
+                        </div>
+                        <div class="col-4">
+                            <div class="import-pet">
+                                <div class="form-field">
+                                    <label for="import-pet">Import Pet</label>
+                                    <div class="form-group">
+                                        <select id="import-pet" name="importPet">
+                                            <option value="Cayde">Cayde</option>
+                                            <option value="Kaiju">Kaiju</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <div class="add_pet_form_top">
                 <a>Add Pet</a>

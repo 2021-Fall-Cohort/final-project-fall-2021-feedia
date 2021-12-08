@@ -53,18 +53,26 @@ margin-right: 2%;
   margin-bottom: 5%;
 }
 
-.single_pet_view_container {
 
-}
+
+/* Optional CSS for the Single Pet View */
 
 .first_section {
   display: flex;
   justify-content: center;
 }
 
+.single_pet {
+  padding-top: 20px;
+}
+
 .pet_info {
   display: flex;
   align-items: center;
+}
+
+.pet_data_div {
+  background-color: lightgray;
 }
 
 .second_section {
@@ -78,6 +86,10 @@ margin-right: 2%;
   justify-content: center;
 }
 
+.pet_care_table {
+  padding: 10px 20px 10px 20px;
+}
+
 .third_section {
   display: flex;
   justify-content: center;
@@ -85,14 +97,44 @@ margin-right: 2%;
 
 .table_links {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
+  justify-content: center;
 }
 
-.notes_display_Section{
+.notes_display_section{
+  padding: 20px 20px 20px 20px;
+}
 
+.notes_display_div {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+  min-width: 400px;
+}
+
+.note_display_box{
+  background-color: lightgray;
+  padding-top: 10px 5px 0px 5px;
+  word-wrap: break-word;
+  max-width: 500px;
+  min-width: 400px;
 }
 
 .add_note_section {
   display: flex;
   flex-direction: column;
+  padding: 20px 20px 20px 20px;
+}
+
+.archive_pet_button {
+  justify-content: center;
+}
+
+
+
+/* Optional CSS for the All Pets View */
+
+.pet_Section {
+  display: flex;
 }

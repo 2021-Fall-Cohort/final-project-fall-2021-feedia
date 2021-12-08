@@ -176,12 +176,12 @@ function displayPetView(mainEl, reptile, reptiles) {
 
     const addNoteTextAreaEl = document.createElement("textarea");
     addNoteTextAreaEl.rows = "4";
-    addNoteTextAreaEl.cols = "20";
+    addNoteTextAreaEl.cols = "40";
     addNoteTextAreaEl.placeholder = "Enter Your Note Here";
 
-    const singlePetAddNotesEl = document.createElement("a");
+    const singlePetAddNotesEl = document.createElement("button");
     singlePetAddNotesEl.innerText = "Add Note";
-    singlePetAddNotesEl.href = "#";
+    // singlePetAddNotesEl.href = "#";
     singlePetAddNotesEl.addEventListener("click", () => {
         const newNoteJson = {
             "name": addNoteNameEl.value,
@@ -226,8 +226,9 @@ function displayPetView(mainEl, reptile, reptiles) {
     // const singlePetTableCalendars3El = document.createElement("li");
     // singlePetTableCalendars3El.innerText = "Placeholder";
 
-    const petArchiveTextEl = document.createElement("p");
-    petArchiveTextEl.innerText = "Archive";
+    const petArchiveTextEl = document.createElement("button");
+    petArchiveTextEl.innerText = "Archive Pet";
+    petArchiveTextEl.classList.add("archive_pet_button")
     petArchiveTextEl.addEventListener("click", () => {
         fetch(`http://localhost:8080/reptiles/${reptile.id}`, {
             method: 'DELETE'

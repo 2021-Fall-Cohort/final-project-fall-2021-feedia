@@ -1,6 +1,6 @@
 import {displayPetView} from "./pet.js";
-import { displayPetsView } from "./pets.js";
-import { displayAddAPetView } from "./addAPet.js";
+import {displayPetsView} from "./pets.js";
+import {displayAddAPetView} from "./addAPet.js";
 
 const containerEl = document.querySelector(".container");
 

@@ -53,26 +53,46 @@ margin-right: 2%;
   margin-bottom: 5%;
 }
 
+.single_pet_view_container {
+
+}
+
 .first_section {
   display: flex;
+  justify-content: center;
 }
 
 .pet_info {
   display: flex;
+  align-items: center;
 }
 
 .second_section {
   display: flex;
+  justify-content: center;
 }
 
 .tables_top {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .third_section {
   display: flex;
+  justify-content: center;
+}
+
+.table_links {
+  display: flex;
+  flex-direction: row;
+}
+
+.notes_display_Section{
+
 }
 
 .add_note_section {
   display: flex;
+  flex-direction: column;
 }

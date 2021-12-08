@@ -13,6 +13,7 @@ function displayPetView(mainEl, reptile, reptiles) {
 
     const singlePetDisplayContainerEl = document.createElement("div");
     singlePetDisplayContainerEl.classList.add("container");
+    singlePetDisplayContainerEl.classList.add("single_pet_view_container");
 
     const singlePetInfoSectionEl = document.createElement("section");
     singlePetInfoSectionEl.classList.add("first_section")

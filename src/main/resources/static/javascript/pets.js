@@ -46,7 +46,7 @@ function displayPetsView(mainEl, reptiles){
         petLinksEl.appendChild(petArchiveTextEl);
 
         const singlePetSectionEl = document.createElement("div");
-        singlePetSectionEl.classList.add("pet_Section");
+        singlePetSectionEl.classList.add("pet_section");
 
         const singlePetImageEl = document.createElement("img");
         singlePetImageEl.src = reptile.image;

@@ -52,3 +52,27 @@ margin-right: 2%;
 .pet_overview_section {
   margin-bottom: 5%;
 }
+
+.first_section {
+  display: flex;
+}
+
+.pet_info {
+  display: flex;
+}
+
+.second_section {
+  display: flex;
+}
+
+.tables_top {
+  display: flex;
+}
+
+.third_section {
+  display: flex;
+}
+
+.add_note_section {
+  display: flex;
+}

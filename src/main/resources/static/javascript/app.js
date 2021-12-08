@@ -1,6 +1,6 @@
 import {displayPetView} from "./pet.js";
-import { displayPetsView } from "./pets.js";
-import { displayAddAPetView } from "./addAPet.js";
+import {displayPetsView} from "./pets.js";
+import {displayAddAPetView} from "./addAPet.js";
 
 const containerEl = document.querySelector(".container");
 
@@ -26,6 +26,7 @@ function buildHeader() {
     headerLogoEl.src= "images/feedia_logo.png";
     headerLogoEl.alt = "site logo";
     headerLogoEl.classList.add("logo");
+    headerLogoEl.classList.add("clickable_el");
     headerLogoEl.addEventListener("click", () => {
         window.location = "./index.html";
     }) 

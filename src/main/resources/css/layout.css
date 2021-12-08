@@ -89,6 +89,11 @@ margin-right: 2%;
     margin:5%;
     
  }
+/* .schedule_container_spv{
+  margin-bottom: 12%;
+  margin-left: 5%;
+  width: 50%;
+} */
 
 .add_pet_form_top{
   margin: 2%;
@@ -123,5 +128,6 @@ margin-right: 2%;
 footer {
   position: relative;
   bottom: 0;
-  width: 100;
+  width: 100%;
 }
+

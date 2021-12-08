@@ -83,3 +83,7 @@ footer {
   height: 50px;
   text-align: center;
 }
+
+.clickable_el {
+    cursor: pointer;
+}

@@ -26,6 +26,7 @@ function buildHeader() {
     headerLogoEl.src= "images/feedia_logo.png";
     headerLogoEl.alt = "site logo";
     headerLogoEl.classList.add("logo");
+    headerLogoEl.classList.add("clickable_el");
     headerLogoEl.addEventListener("click", () => {
         window.location = "./index.html";
     }) 

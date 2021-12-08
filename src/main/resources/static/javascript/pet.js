@@ -151,6 +151,7 @@ function displayPetView(mainEl, reptile, reptiles) {
         const trashButtonIconEl = document.createElement("i");
         trashButtonIconEl.classList.add("far");
         trashButtonIconEl.classList.add("fa-trash-alt");
+        trashButtonIconEl.classList.add("clickable_el");
         trashButtonIconEl.addEventListener("click", () => {
             fetch(`http://localhost:8080/notes/${note.id}`, {
                 method: 'DELETE'
@@ -181,6 +182,7 @@ function displayPetView(mainEl, reptile, reptiles) {
 
     const singlePetAddNotesEl = document.createElement("button");
     singlePetAddNotesEl.innerText = "Add Note";
+    singlePetAddNotesEl.classList.add("clickable_el");
     // singlePetAddNotesEl.href = "#";
     singlePetAddNotesEl.addEventListener("click", () => {
         const newNoteJson = {
@@ -229,6 +231,7 @@ function displayPetView(mainEl, reptile, reptiles) {
     const petArchiveTextEl = document.createElement("button");
     petArchiveTextEl.innerText = "Archive Pet";
     petArchiveTextEl.classList.add("archive_pet_button")
+    petArchiveTextEl.classList.add("clickable_el");
     petArchiveTextEl.addEventListener("click", () => {
         fetch(`http://localhost:8080/reptiles/${reptile.id}`, {
             method: 'DELETE'

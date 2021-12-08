@@ -137,4 +137,34 @@ margin-right: 2%;
 
 .pet_Section {
   display: flex;
+  background-color: #1A8D26;
+  flex-wrap: wrap;
+}
+
+.portrait_and_info_div {
+  display: flex;
+  flex-direction: column;
+}
+
+.temp_humidity_div {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  background-color: #1A8D26;
+}
+
+.pets_view_portrait {
+  width: 200px;
+  height: 200px;
+}
+
+/* Optional media query */
+
+@media only screen and (max-width: 1020px){
+  .pet_Section{
+      flex-direction: column;
+      justify-content: center;
+      background-color: black;
+  }
+
 }

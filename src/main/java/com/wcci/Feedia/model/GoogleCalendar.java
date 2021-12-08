@@ -91,13 +91,18 @@ public class GoogleCalendar {
                 .setApplicationName(APPLICATION_NAME)
                 .build();
 
+        AclRule rule = new AclRule();
+        AclRule.Scope scope = new AclRule.Scope();
+        scope.setType("default");
+        rule.setScope(scope).setRole("reader");
+
         com.google.api.services.calendar.model.Calendar calendar = new com.google.api.services.calendar.model.Calendar();
         calendar.setSummary(calendarName);
         calendar.setTimeZone("America/New_York");
 
         com.google.api.services.calendar.model.Calendar createdCalendar = service.calendars().insert(calendar).execute();
-
         googleCalendarId = createdCalendar.getId();
+        AclRule createdRule = service.acl().insert(googleCalendarId, rule).execute();
     }
 
     public void getNextEventTime() throws IOException, GeneralSecurityException {

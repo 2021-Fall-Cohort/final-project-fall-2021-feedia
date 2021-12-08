@@ -20,6 +20,7 @@ function displayPetsView(mainEl, reptiles){
 
         const petNameTextEl = document.createElement("p");
         petNameTextEl.innerText = reptile.name;
+        petNameTextEl.classList.add("clickable_el")
         petNameTextEl.addEventListener("click", () => {
             clearChildren(mainEl);
             displayPetView(mainEl, reptile);
@@ -48,16 +49,25 @@ function displayPetsView(mainEl, reptiles){
         const singlePetSectionEl = document.createElement("div");
         singlePetSectionEl.classList.add("pet_Section");
 
+        const petPortraitInfoDivEl = document.createElement("div");
+        petPortraitInfoDivEl.classList.add("portrait_and_info_div");
+
         const singlePetImageEl = document.createElement("img");
         singlePetImageEl.src = reptile.image;
         singlePetImageEl.alt = "pet portrait";
+        singlePetImageEl.classList.add("clickable_el");
+        singlePetImageEl.classList.add("pets_view_portrait");
         singlePetImageEl.addEventListener("click", () => {
             clearChildren(mainEl);
             displayPetView(mainEl, reptile);
         });
 
         const tempHumidityDivEl = document.createElement("div");
-        tempHumidityDivEl.classList.add("temp_humnidity_div")
+        tempHumidityDivEl.classList.add("temp_humidity_div");
+
+        singlePetSectionEl.appendChild(petPortraitInfoDivEl);
+        petPortraitInfoDivEl.appendChild(singlePetImageEl); //appending sections to new div for styling test
+        petPortraitInfoDivEl.appendChild(tempHumidityDivEl);
     
         const tempDisplayEl = document.createElement("p");
         tempDisplayEl.classList.add("temp_data_display");
@@ -79,8 +89,8 @@ function displayPetsView(mainEl, reptiles){
         tempHumidityDivEl.appendChild(tempDisplayEl);
         tempHumidityDivEl.appendChild(humidityDisplayEl);
 
-        singlePetSectionEl.appendChild(singlePetImageEl);
-        singlePetSectionEl.appendChild(tempHumidityDivEl);
+        // singlePetSectionEl.appendChild(singlePetImageEl); //appending sections to new div for styling test
+        // singlePetSectionEl.appendChild(tempHumidityDivEl);
         singlePetSectionEl.appendChild(petAgendaCalendarDivEl);
         singlePetSectionEl.appendChild(petMonthCalendarDivEl);
         reptileSectionEl.appendChild(singlePetSectionEl);

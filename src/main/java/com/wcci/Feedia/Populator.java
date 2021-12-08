@@ -28,7 +28,7 @@ public class Populator implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        Reptile reptile1 = new Reptile("Higgins", "Corn Snake", 4, "Male","../images/kaiju.png", "Brown body, bad temper", 0f, 0f);
+        Reptile reptile1 = new Reptile("Kaiju", "Corn Snake", 4, "Male","../images/kaiju.png", "Brown body, bad temper", 0f, 0f);
         reptileRepo.save(reptile1);
         reptile1.createCalendar();
         reptile1.myCalendar.setReptile(reptile1);

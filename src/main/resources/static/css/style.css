@@ -71,8 +71,9 @@ header {
   background-color: rgba(26, 141, 38, 0.3)
 }
 
-
-
+.clickable_el {
+    cursor: pointer;
+}
 
 footer {
   background-color: #1A8D26;

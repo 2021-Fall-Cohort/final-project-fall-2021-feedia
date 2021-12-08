@@ -30,6 +30,7 @@ function displayPetView(mainEl, reptile, reptiles) {
     const singlePetPortraitEl = document.createElement("img");
     singlePetPortraitEl.src = reptile.image;
     singlePetPortraitEl.alt = "pet portrait";
+    singlePetPortraitEl.classList.add("pet_portrait");
 
     const petDataDivEl = document.createElement("div");
     petDataDivEl.classList.add("pet_data_div");

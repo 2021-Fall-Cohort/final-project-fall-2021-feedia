@@ -75,7 +75,7 @@ function buildFooter() {
     const footerDivEl = document.createElement("div");
     footerDivEl.classList.add("footer_text");
     const footerTextEl = document.createElement("p");
-    footerTextEl.innerText = "We Can Code IT 2021";
+    footerTextEl.innerText = "We Can Code IT  &copy; 2021";
     footerDivEl.appendChild(footerTextEl);
     footerEl.appendChild(footerDivEl);
     containerEl.appendChild(footerEl);

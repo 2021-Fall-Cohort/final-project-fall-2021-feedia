@@ -10,9 +10,8 @@
      flex-direction: column;
  }
 
- .pet-calendar-div {
-    margin:5%;
-    
+ .pet_calendar {
+    margin: 10%;
  }
 
  .feeding_info {

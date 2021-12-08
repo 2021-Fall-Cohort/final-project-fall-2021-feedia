@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.security.GeneralSecurityException;
+import java.text.MessageFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -149,7 +150,7 @@ public class GoogleCalendar {
         }
     }
 
-    public void createEvent(String eventSummary, String eventLocation, String eventDescription, String eventStartTime, String eventEndTime) throws IOException, GeneralSecurityException {
+    public void createEvent(String eventSummary, String eventLocation, String eventDescription, String eventStartTime, String eventEndTime, String eventFrequency, String eventRepetition) throws IOException, GeneralSecurityException {
         final NetHttpTransport HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
         Calendar service = new Calendar.Builder(HTTP_TRANSPORT, JSON_FACTORY, getCredentials(HTTP_TRANSPORT))
                 .setApplicationName(APPLICATION_NAME)
@@ -172,8 +173,7 @@ public class GoogleCalendar {
                 .setDateTime(endDateTime)
                 .setTimeZone("America/New_York");
         testEvent.setEnd(end);
-
-        String[] recurrence = new String[] {"RRULE:FREQ=WEEKLY;COUNT=50"};
+        String[] recurrence = new String[] {"RRULE:FREQ="+eventFrequency+";COUNT="+eventRepetition};
         testEvent.setRecurrence(Arrays.asList(recurrence));
 
         EventAttendee[] attendees = new EventAttendee[] {

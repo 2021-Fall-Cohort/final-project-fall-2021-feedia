@@ -14,9 +14,8 @@ header {
 
 .pet_links a{
    font-size: 1.5em;
-   color:
+   color: #ffffff;
    text-decoration: none;
-    
 }
 
 .pet_links {
@@ -98,7 +97,6 @@ footer {
   background-color: #1A8D26;
   color: azure;
   clear: both;
-  position: relative;
   height: 50px;
   text-align: center;
 }

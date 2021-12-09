@@ -1,11 +1,12 @@
 * {
     margin: 0;
 }
+
 .container {
   position:relative;
   height: 100vh;
-
 }
+
 
 #header {
   display: flex;
@@ -66,8 +67,6 @@ margin-right: 2%;
 }
 
 .table_links {
-  display: flex;
-  justify-content: space-between;
   padding: 2%;
 }
 
@@ -134,8 +133,10 @@ margin-right: 2%;
   flex-direction: column;
 }
 
+
+
 footer {
-  position: relative;
+  position: absolute;
   bottom: 0;
   width: 100%;
 }

@@ -14,7 +14,7 @@ header {
 
 .pet_links a{
    font-size: 1.5em;
-   color:#ffffff;
+   color:
    text-decoration: none;
     
 }
@@ -48,8 +48,8 @@ header {
 }
 
 .table_links {
-  background-color: #1A8D26;
-  color:#ffffff;
+  color:#1A8D26;
+  border-bottom: solid, black .5px;
   font-size:1.5em;
 }
 
@@ -67,7 +67,17 @@ header {
     list-style: none;
 }
 
-.pet_care_table li:nth-child(2n) {
+.notes_display_section h4{
+    color:#1A8D26;
+
+}
+
+.notes_display_section p{
+  color:#363636;
+  border:#363636, solid, .5px;
+}
+
+.notes_display_section p:nth-child(2n) {
   background-color: rgba(26, 141, 38, 0.3)
 }
 

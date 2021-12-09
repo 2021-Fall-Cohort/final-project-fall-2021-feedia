@@ -37,11 +37,11 @@ public class Populator implements CommandLineRunner {
         googleCalendarRepo.save(reptile1.getMyCalendar());
 
 
-//        Reptile reptile2 = new Reptile("Webster", "Bearded Dragon", 6, "Male","../images/webster.jpg", "Loves crickets and kale", 0f, 0f);
-//        reptileRepo.save(reptile2);
-//        reptile2.createCalendar();
-//        reptile2.myCalendar.setReptile(reptile2);
-//        googleCalendarRepo.save(reptile2.getMyCalendar());
+        Reptile reptile2 = new Reptile("Cayde", "Leopard Gecko", 6, "Male","../images/cayde.png", "He don't like being touched", 0f, 0f);
+        reptileRepo.save(reptile2);
+        reptile2.createCalendar();
+        reptile2.myCalendar.setReptile(reptile2);
+        googleCalendarRepo.save(reptile2.getMyCalendar());
 //
 //        Reptile reptile3 = new Reptile("Ginger", "Leopard Gecko", 3, "Female","../images/ginger.jpg", "Loves to eat anything", 0f, 0f);
 //        reptileRepo.save(reptile3);

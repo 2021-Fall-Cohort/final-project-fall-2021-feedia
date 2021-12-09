@@ -39,7 +39,7 @@ function displayPetView(mainEl, reptile, reptiles) {
     singlePetDemographicsDivEl.classList.add("pet_demographics");
 
     const tempHumidityDivEl = document.createElement("div");
-    tempHumidityDivEl.classList.add("temp_humnidity_div")
+    tempHumidityDivEl.classList.add("temp_humidity_div")
 
     petDataDivEl.appendChild(singlePetDemographicsDivEl);
     petDataDivEl.appendChild(tempHumidityDivEl);
@@ -109,7 +109,7 @@ function displayPetView(mainEl, reptile, reptiles) {
     singlePetTableCalendarsDivEl.classList.add("table_items");
 
     const petMonthCalendarDivEl = document.createElement("div");
-    petMonthCalendarDivEl.classList.add('pet-calendar-div');
+    petMonthCalendarDivEl.classList.add('pet_calendar_div');
     petMonthCalendarDivEl.innerHTML = `<iframe src="https://calendar.google.com/calendar/embed?src=${reptile.myCalendar.googleCalendarId}&showPrint=0&showTabs=0&bgcolor=%231a8d26" style="border:solid 1px #777" width="400" height="300" frameborder="0" scrolling="no"></iframe>`
 
     singlePetTopTableSectionEl.appendChild(singlePetTablesTopEl);

@@ -71,8 +71,17 @@ header {
   background-color: rgba(26, 141, 38, 0.3)
 }
 
+.note_display_box {
+    
+    word-wrap: break-word;
+}
+
 .clickable_el {
     cursor: pointer;
+}
+
+.text_link {
+    color: #ffffff;
 }
 
 footer {

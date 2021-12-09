@@ -47,7 +47,7 @@ margin-right: 2%;
   display: flex;
   justify-content: space-between;
   padding: 5%;
-  
+  align-items: center;
 }
 
 .pet_overview_section section {
@@ -75,6 +75,10 @@ margin-right: 2%;
   margin-left: 5%;
 }
 
+.temp_humidity_div {
+  margin-left: 5%;
+}
+
 .pet_care_table {
   margin: 5%;
   margin-bottom: 5%; 
@@ -85,7 +89,7 @@ margin-right: 2%;
   justify-content: space-between;
 }
 
-.pet-calendar-div {
+.pet_calendar_div {
     margin:5%;
     
  }
@@ -123,6 +127,11 @@ margin-right: 2%;
 .description {
   justify-content: center;
   margin-left: 5%;
+}
+
+.add_note_section {
+  display: flex;
+  flex-direction: column;
 }
 
 footer {

@@ -20,7 +20,8 @@ function displayPetsView(mainEl, reptiles){
 
         const petNameTextEl = document.createElement("p");
         petNameTextEl.innerText = reptile.name;
-        petNameTextEl.classList.add("clickable_el")
+        petNameTextEl.classList.add("clickable_el");
+        petNameTextEl.classList.add("text_link");
         petNameTextEl.addEventListener("click", () => {
             clearChildren(mainEl);
             displayPetView(mainEl, reptile);
@@ -30,6 +31,8 @@ function displayPetsView(mainEl, reptiles){
 
         const petArchiveTextEl = document.createElement("p");
         petArchiveTextEl.innerText = "Archive";
+        petArchiveTextEl.classList.add("clickable_el")
+        petArchiveTextEl.classList.add("text_link");
         petArchiveTextEl.addEventListener("click", () => {
             fetch(`http://localhost:8080/reptiles/${reptile.id}`, {
                 method: 'DELETE'

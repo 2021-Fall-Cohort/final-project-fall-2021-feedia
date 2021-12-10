@@ -121,3 +121,8 @@ footer {
     padding-left: 25px;
     color: #1A8D26 ;
 }
+
+.pet_data_div {
+    background-color: rgba(26, 141, 38, 0.3);
+    min-width: 145px;
+}

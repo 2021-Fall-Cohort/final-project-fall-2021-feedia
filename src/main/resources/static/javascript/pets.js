@@ -34,7 +34,8 @@ function displayPetsView(mainEl, reptiles){
         petArchiveTextEl.classList.add("clickable_el")
         petArchiveTextEl.classList.add("text_link");
         petArchiveTextEl.addEventListener("click", () => {
-            fetch(`http://localhost:8080/reptiles/${reptile.id}`, {
+//            fetch(`http://localhost:8080/reptiles/${reptile.id}`, {
+            fetch(`/reptiles/${reptile.id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())

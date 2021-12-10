@@ -116,7 +116,8 @@ function displayAddAPetView(containerEl){
             "schedules": [],
             "notes": []
         }
-        fetch(`http://localhost:8080/reptiles/`, {
+//        fetch(`http://localhost:8080/reptiles/`, {
+        fetch(`/reptiles/`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

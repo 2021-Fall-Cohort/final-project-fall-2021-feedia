@@ -63,7 +63,8 @@ function buildMainElement(){
     const mainEl = document.createElement("main");
     mainEl.classList.add("main-content");
     containerEl.appendChild(mainEl);
-    fetch("http://localhost:8080/reptiles/")
+//    fetch("http://localhost:8080/reptiles/")
+    fetch("/reptiles/")
     .then(res => res.json())
     .then(reptiles => {
         displayPetsView(mainEl, reptiles);

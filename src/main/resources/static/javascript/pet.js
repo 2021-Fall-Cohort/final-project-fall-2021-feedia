@@ -154,7 +154,7 @@ function displayPetView(mainEl, reptile, reptiles) {
         trashButtonIconEl.classList.add("fa-trash-alt");
         trashButtonIconEl.classList.add("clickable_el");
         trashButtonIconEl.addEventListener("click", () => {
-            fetch(`http://localhost:8080/notes/${note.id}`, {
+            fetch(`/notes/${note.id}`, {
                 method: 'DELETE'
             })
             .then(res => res.json())
@@ -191,7 +191,7 @@ function displayPetView(mainEl, reptile, reptiles) {
             "description": addNoteTextAreaEl.value,
             "isPinned": "True"
         }
-        fetch(`http://localhost:8080/notes/${reptile.id}`, {
+        fetch(`/notes/${reptile.id}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -234,7 +234,7 @@ function displayPetView(mainEl, reptile, reptiles) {
     petArchiveTextEl.classList.add("archive_pet_button")
     petArchiveTextEl.classList.add("clickable_el");
     petArchiveTextEl.addEventListener("click", () => {
-        fetch(`http://localhost:8080/reptiles/${reptile.id}`, {
+        fetch(`/reptiles/${reptile.id}`, {
             method: 'DELETE'
         })
         .then(res => res.json())

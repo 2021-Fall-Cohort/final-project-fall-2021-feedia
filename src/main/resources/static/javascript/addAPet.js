@@ -14,23 +14,23 @@ function displayAddAPetView(containerEl){
     const addPetFormTitleEl = document.createElement("a");
     addPetFormTitleEl.innerText = "Add Pet";
 
-    const importPetButtonDivEl = document.createElement("div");
-    importPetButtonDivEl.classList.add("Import");
+    // const importPetButtonDivEl = document.createElement("div");
+    // importPetButtonDivEl.classList.add("Import");
 
-    const importPetButtonTextEl = document.createElement("p");
-    importPetButtonTextEl.innerText = "Import Pet:";
+    // const importPetButtonTextEl = document.createElement("p");
+    // importPetButtonTextEl.innerText = "Import Pet:";
 
-    const importPetButtonEl = document.createElement("input");
-    importPetButtonEl.type = "text";
-    importPetButtonEl.name = "import_pet";
+    // const importPetButtonEl = document.createElement("input");
+    // importPetButtonEl.type = "text";
+    // importPetButtonEl.name = "import_pet";
 
-    const hrEl = document.createElement("hr");
+    // const hrEl = document.createElement("hr");
 
     petFormTopEl.appendChild(addPetFormTitleEl);
-    petFormTopEl.appendChild(importPetButtonDivEl);
-    petFormTopEl.appendChild(hrEl);
-    importPetButtonDivEl.appendChild(importPetButtonTextEl);
-    importPetButtonDivEl.appendChild(importPetButtonEl);
+    // petFormTopEl.appendChild(importPetButtonDivEl);
+    // petFormTopEl.appendChild(hrEl);
+    // importPetButtonDivEl.appendChild(importPetButtonTextEl);
+    // importPetButtonDivEl.appendChild(importPetButtonEl);
 
     const basicInputSectionEl = document.createElement("div");
     basicInputSectionEl.classList.add("Basic_Input");

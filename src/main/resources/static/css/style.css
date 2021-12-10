@@ -27,7 +27,7 @@ header {
 }
 
 
-.add_pet_form_top {
+/* .add_pet_form_top {  //added the colors below
     color: #1A8D26 ;
 }
 .basic_input {
@@ -44,7 +44,7 @@ header {
 
 .add_pet {
     color: #1A8D26;
-}
+} */
 
 .table_links {
   color:#1A8D26;
@@ -77,7 +77,7 @@ header {
 }
 
 .notes_display_section p:nth-child(2n) {
-  background-color: rgba(26, 141, 38, 0.3)
+  background-color: rgba(26, 141, 38, 0.3);
 }
 
 .note_display_box {
@@ -99,4 +99,25 @@ footer {
   clear: both;
   height: 50px;
   text-align: center;
+}
+
+.Basic_Input{
+    padding: 25px 0px 0px 25px;
+    color: #1A8D26 ;
+    /* background-color: rgba(26, 141, 38, 0.3); */
+}
+
+.Add_Pet_Form_Top{
+    padding: 25px 0px 0px 25px;
+    color: #1A8D26 ;
+}
+
+.Input_Continued {
+    padding-left: 25px;
+    color: #1A8D26 ;
+}
+
+.Description {
+    padding-left: 25px;
+    color: #1A8D26 ;
 }
